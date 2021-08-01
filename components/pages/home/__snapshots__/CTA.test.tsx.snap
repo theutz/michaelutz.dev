@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CTA /> renders 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-white"
+  >
+    <div
+      class="max-w-4xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between"
+    >
+      <h2
+        class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+      >
+        <span
+          class="block"
+        >
+          Ready to get started?
+        </span>
+        <span
+          class="block text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text"
+        >
+          Get in touch or create an account.
+        </span>
+      </h2>
+      <div
+        class="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-5"
+      >
+        <a
+          class="flex items-center justify-center px-4 py-3 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
+          href="#"
+        >
+          Learn more
+        </a>
+        <a
+          class="flex items-center justify-center px-4 py-3 text-base font-medium text-indigo-800 border border-transparent rounded-md shadow-sm bg-indigo-50 hover:bg-indigo-100"
+          href="#"
+        >
+          Get started
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react";
-import Index from "../../pages/index";
+import { Head } from "components/Head";
 
-describe("<Index />", () => {
+describe("<Head />", () => {
   it("renders", () => {
     // Arrange
 
     // Act
-    const { asFragment } = render(<Index />);
+    const { asFragment } = render(<Head />);
 
     // Assert
     expect(asFragment()).toMatchSnapshot();

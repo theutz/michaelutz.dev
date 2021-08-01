@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react";
-import Index from "../../pages/index";
+import { CTA } from "components/pages/home/CTA";
 
-describe("<Index />", () => {
+describe("<CTA />", () => {
   it("renders", () => {
     // Arrange
 
     // Act
-    const { asFragment } = render(<Index />);
+    const { asFragment } = render(<CTA />);
 
     // Assert
     expect(asFragment()).toMatchSnapshot();

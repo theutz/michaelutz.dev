@@ -2,10 +2,10 @@
 import Head from "next/head";
 import Header from "components/Header";
 import Footer from "components/Footer";
-import Hero from "components/Hero";
-import LogoCloud from "components/LogoCloud";
-import AlternatingFeatureSections from "components/AlternatingFeatureSections";
-import GradientFeatures from "components/home/GradientFeatures";
+import Hero from "components/pages/home/Hero";
+import LogoCloud from "components/pages/home/LogoCloud";
+import AlternatingFeatureSections from "components/pages/home/AlternatingFeatures";
+import GradientFeatures from "components/pages/home/GradientFeatures";
 
 const metrics = [
   {
@@ -34,7 +34,7 @@ const metrics = [
   },
 ];
 
-export function Home() {
+export function Index() {
   return (
     <div className="bg-white">
       <Head>
@@ -148,4 +148,4 @@ export function Home() {
   );
 }
 
-export default Home;
+export default Index;

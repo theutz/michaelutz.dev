@@ -10,7 +10,7 @@ import {
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import React, { Fragment } from "react";
-import { classNames } from "../utils/classNames";
+import { classNames } from "utils/classNames";
 
 const solutions = [
   {

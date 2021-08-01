@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { AlternatingFeatureSections } from "./AlternatingFeatureSections";
+import { render } from "@testing-library/react";
+import { AlternatingFeatureSections } from "./AlternatingFeatures";
 
 describe("<AlternatingFeatureSections />", () => {
   it("renders", () => {

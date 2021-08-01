@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { GradientFeatures } from "components/home/GradientFeatures";
+import { GradientFeatures } from "components/pages/home/GradientFeatures";
 
 describe("<GradientFeatures />", () => {
   it("renders", () => {

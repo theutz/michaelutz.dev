@@ -6,4 +6,7 @@ module.exports = {
     "<rootDir>/node_modules/",
     "<rootDir>/cypress/",
   ],
+  moduleNameMapper: {
+    "^(pages|components|__tests__|utils|hooks)/(.*)$": "<rootDir>/$1/$2",
+  },
 };

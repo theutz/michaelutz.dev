@@ -1,6 +1,10 @@
 {
   "pages/*.tsx": {
     "alternate": "__tests__/pages/{}.test.tsx",
+    "related": [
+      "__tests__/pages/{}.test.tsx",
+      "cypress/integration/pages/*.spec.ts"
+    ],
     "type": "page",
     "template": [
       "export function {basename}() {",
@@ -12,11 +16,14 @@
   },
   "__tests__/pages/*.test.tsx": {
     "alternate": "pages/{}.tsx",
-    "related": ["{dirname}/__snapshots__/{basename}.test.tsx.snap"],
-    "type": "page-test",
+    "related": [
+      "pages/{}.tsx",
+      "{dirname}/__snapshots__/{basename}.test.tsx.snap"
+    ],
+    "type": "test",
     "template": [
       "import {open} render, screen {close} from '@testing-library/react'",
-      "import {basename|capitalize} from '../../pages/{}'",
+      "import {basename|capitalize} from 'pages/{}'",
       "",
       "describe('<{basename|capitalize} />', () => {",
       "\tit('renders', () => {",
@@ -34,16 +41,16 @@
   "__tests__/pages/**/__snapshots__/*.snap": {
     "alternate": "__tests__/pages/{}",
     "related": ["pages/{}"],
-    "type": "page-snap"
+    "type": "snap"
   },
   "cypress/integration/pages/*.spec.ts": {
     "alternate": "pages/{}.tsx",
     "related": "pages/{}.tsx",
-    "type": "page-int"
+    "type": "int"
   },
   "components/*.tsx": {
     "alternate": "components/{}.test.tsx",
-    "type": "comp",
+    "type": "component",
     "template": [
       "export function {basename}() {",
       "\treturn null;",
@@ -58,10 +65,10 @@
       "{dirname}/__snapshots__/{basename}.test.tsx.snap",
       "components/{}.tsx"
     ],
-    "type": "comp-test",
+    "type": "test",
     "template": [
       "import {open} render, screen {close} from '@testing-library/react'",
-      "import {open} {basename} {close} from './{}'",
+      "import {open} {basename} {close} from 'components/{}'",
       "",
       "describe('<{basename} />', () => {",
       "\tit('renders', () => {",
@@ -78,8 +85,8 @@
   },
   "components/**/__snapshots__/*.snap": {
     "alternate": "components/{}.test.tsx",
-    "related": ["components/{}"],
-    "type": "comp-snap"
+    "related": ["components/{}", "components/{}"],
+    "type": "snap"
   },
   "*": {
     "make": "npm run build"

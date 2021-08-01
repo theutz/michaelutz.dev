@@ -221,7 +221,7 @@ export default function Home() {
   return (
     <div className="bg-white">
       <Head>
-        <title>theutz.com | Michael Utz</title>
+        <title>Michael Utz | Web Developer</title>
         <link
           rel="icon"
           type="image/svg+xml"
@@ -234,21 +234,21 @@ export default function Home() {
         <Popover className="relative bg-white">
           {({ open }) => (
             <>
-              <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
+              <div className="flex items-center justify-between px-4 py-6 mx-auto max-w-7xl sm:px-6 md:justify-start md:space-x-10 lg:px-8">
                 <div className="flex justify-start lg:w-0 lg:flex-1">
                   <a href="#">
                     <span className="sr-only">Workflow</span>
                     <img
-                      className="h-8 w-auto sm:h-10"
+                      className="w-auto h-8 sm:h-10"
                       src="https://tailwindui.com/img/logos/workflow-mark-purple-600-to-indigo-600.svg"
                       alt=""
                     />
                   </a>
                 </div>
-                <div className="-mr-2 -my-2 md:hidden">
-                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <div className="-my-2 -mr-2 md:hidden">
+                  <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Open menu</span>
-                    <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                    <MenuIcon className="w-6 h-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
                 <Popover.Group as="nav" className="hidden md:flex space-x-10">
@@ -283,9 +283,9 @@ export default function Home() {
                         >
                           <Popover.Panel
                             static
-                            className="absolute z-10 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
+                            className="absolute z-10 w-screen max-w-md mt-3 -ml-4 transform lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
                           >
-                            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                            <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                               <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
                                 {solutions.map((item) => (
                                   <a

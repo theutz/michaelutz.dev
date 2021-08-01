@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
+        <title>theutz.com | Michael Utz</title>
         <link
           rel="icon"
           type="image/svg+xml"

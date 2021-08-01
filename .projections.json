@@ -17,5 +17,8 @@
     "alternate": "pages/{}.tsx",
     "related": "pages/{}.tsx",
     "type": "int"
+  },
+  "*": {
+    "make": "npm run build"
   }
 }

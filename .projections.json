@@ -1,12 +1,35 @@
 {
   "pages/*.tsx": {
     "alternate": "__tests__/pages/{}.test.tsx",
-    "type": "page"
+    "type": "source",
+    "template": [
+      "export function {basename}() {",
+      "\treturn null;",
+      "}",
+      "",
+      "export default {basename};"
+    ]
   },
   "__tests__/pages/*.test.tsx": {
     "alternate": "pages/{}.tsx",
     "related": ["{dirname}/__snapshots__/{basename}.test.tsx.snap"],
-    "type": "test"
+    "type": "test",
+    "template": [
+      "import {open} render, screen {close} from '@testing-library/react'",
+      "import {basename|capitalize} from '../../pages/{}'",
+      "",
+      "describe('<{basename|capitalize} />', () => {",
+      "\tit('renders', () => {",
+      "\t\t// Arrange",
+      "",
+      "\t\t// Act",
+      "\t\tconst {open} asFragment {close} = render(<{basename|capitalize} />)",
+      "",
+      "\t\t// Assert",
+      "\t\texpect(asFragment()).toMatchSnapshot()",
+      "\t});",
+      "});"
+    ]
   },
   "__tests__/pages/**/__snapshots__/*.snap": {
     "alternate": "__tests__/pages/{}",
@@ -17,6 +40,46 @@
     "alternate": "pages/{}.tsx",
     "related": "pages/{}.tsx",
     "type": "int"
+  },
+  "components/*.tsx": {
+    "alternate": "components/{}.test.tsx",
+    "type": "source",
+    "template": [
+      "export function {basename}() {",
+      "\treturn null;",
+      "}",
+      "",
+      "export default {basename};"
+    ]
+  },
+  "components/*.test.tsx": {
+    "alternate": "components/{}.tsx",
+    "related": [
+      "{dirname}/__snapshots__/{basename}.test.tsx.snap",
+      "components/{}.tsx"
+    ],
+    "type": "test",
+    "template": [
+      "import {open} render, screen {close} from '@testing-library/react'",
+      "import {open} {basename} {close} from './{}'",
+      "",
+      "describe('<{basename} />', () => {",
+      "\tit('renders', () => {",
+      "\t\t// Arrange",
+      "",
+      "\t\t// Act",
+      "\t\tconst {open} asFragment {close} = render(<{basename} />)",
+      "",
+      "\t\t// Assert",
+      "\t\texpect(asFragment()).toMatchSnapshot()",
+      "\t});",
+      "});"
+    ]
+  },
+  "components/**/__snapshots__/*.snap": {
+    "alternate": "{}.snap",
+    "related": ["components/{}"],
+    "type": "snap"
   },
   "*": {
     "make": "npm run build"

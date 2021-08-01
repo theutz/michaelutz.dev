@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`it works 1`] = `
+exports[`<Index /> renders 1`] = `
 <DocumentFragment>
   <div
     class="bg-white"

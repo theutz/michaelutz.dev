@@ -12,6 +12,7 @@ export default function Home() {
           href="/assets/images/favicon.svg"
         />
         <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
       Hello
     </div>

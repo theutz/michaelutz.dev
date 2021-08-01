@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Head from "next/head";
 import Header from "components/Header";
 import Footer from "components/Footer";
+import Head from "components/Head";
 import Hero from "components/pages/home/Hero";
 import LogoCloud from "components/pages/home/LogoCloud";
 import AlternatingFeatureSections from "components/pages/home/AlternatingFeatures";
@@ -37,26 +37,7 @@ const metrics = [
 export function Index() {
   return (
     <div className="bg-white">
-      <Head>
-        <title>Michael Utz | Web Developer</title>
-        <link
-          data-cy="svg-favicon"
-          rel="icon"
-          type="image/svg+xml"
-          href="/assets/images/favicon.svg"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/assets/images/favicon.png"
-          data-cy="png-favicon"
-        />
-        <link
-          rel="stylesheet"
-          href="https://rsms.me/inter/inter.css"
-          data-cy="font-stylesheet"
-        />
-      </Head>
+      <Head />
       <Header />
 
       <main>

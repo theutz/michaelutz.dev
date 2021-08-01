@@ -1,0 +1,21 @@
+{
+  "pages/*.tsx": {
+    "alternate": "__tests__/pages/{}.test.tsx",
+    "type": "page"
+  },
+  "__tests__/pages/*.test.tsx": {
+    "alternate": "pages/{}.tsx",
+    "related": ["{dirname}/__snapshots__/{basename}.test.tsx.snap"],
+    "type": "test"
+  },
+  "__tests__/pages/**/__snapshots__/*.snap": {
+    "alternate": "__tests__/pages/{}",
+    "related": ["pages/{}"],
+    "type": "snap"
+  },
+  "cypress/integration/pages/*.spec.ts": {
+    "alternate": "pages/{}.tsx",
+    "related": "pages/{}.tsx",
+    "type": "int"
+  }
+}

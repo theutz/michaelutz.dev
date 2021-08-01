@@ -44,5 +44,3 @@ describe(`Home Page`, () => {
     });
   });
 });
-
-export {};

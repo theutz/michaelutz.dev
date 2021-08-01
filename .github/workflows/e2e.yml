@@ -1,0 +1,9 @@
+name: E2E tests
+on: [deployment_status]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2.9.7
+

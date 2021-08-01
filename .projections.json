@@ -1,7 +1,7 @@
 {
   "pages/*.tsx": {
     "alternate": "__tests__/pages/{}.test.tsx",
-    "type": "source",
+    "type": "page",
     "template": [
       "export function {basename}() {",
       "\treturn null;",
@@ -13,7 +13,7 @@
   "__tests__/pages/*.test.tsx": {
     "alternate": "pages/{}.tsx",
     "related": ["{dirname}/__snapshots__/{basename}.test.tsx.snap"],
-    "type": "test",
+    "type": "page-test",
     "template": [
       "import {open} render, screen {close} from '@testing-library/react'",
       "import {basename|capitalize} from '../../pages/{}'",
@@ -34,16 +34,16 @@
   "__tests__/pages/**/__snapshots__/*.snap": {
     "alternate": "__tests__/pages/{}",
     "related": ["pages/{}"],
-    "type": "snap"
+    "type": "page-snap"
   },
   "cypress/integration/pages/*.spec.ts": {
     "alternate": "pages/{}.tsx",
     "related": "pages/{}.tsx",
-    "type": "int"
+    "type": "page-int"
   },
   "components/*.tsx": {
     "alternate": "components/{}.test.tsx",
-    "type": "source",
+    "type": "comp",
     "template": [
       "export function {basename}() {",
       "\treturn null;",
@@ -58,7 +58,7 @@
       "{dirname}/__snapshots__/{basename}.test.tsx.snap",
       "components/{}.tsx"
     ],
-    "type": "test",
+    "type": "comp-test",
     "template": [
       "import {open} render, screen {close} from '@testing-library/react'",
       "import {open} {basename} {close} from './{}'",
@@ -77,9 +77,9 @@
     ]
   },
   "components/**/__snapshots__/*.snap": {
-    "alternate": "{}.snap",
+    "alternate": "components/{}.test.tsx",
     "related": ["components/{}"],
-    "type": "snap"
+    "type": "comp-snap"
   },
   "*": {
     "make": "npm run build"

@@ -1,3 +1,12 @@
+import { render } from "@testing-library/react";
+import { Home } from "../../pages/index";
+
 test("it works", () => {
-  expect(true).toBe(true);
+  // Arrange
+
+  // Act
+  const { asFragment } = render(<Home />);
+
+  // Assert
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -228,7 +228,7 @@ function classNames(...classes: (string | undefined)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Home() {
+export function Home() {
   return (
     <div className="bg-white">
       <Head>
@@ -927,3 +927,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

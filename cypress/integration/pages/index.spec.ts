@@ -1,5 +1,9 @@
-describe(`My First Test`, () => {
-  it(`Doesn't do much`, () => {
-    cy.visit("http://localhost:3000");
+describe(`Home Page`, () => {
+  it(`should work`, () => {
+    cy.visit("/");
+
+    cy.title().should("eq", "Michael Utz | Web Developer");
   });
 });
+
+export {};

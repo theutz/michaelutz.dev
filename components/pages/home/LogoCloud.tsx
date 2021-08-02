@@ -5,8 +5,9 @@ import smartlyLogo from "public/assets/images/smartly-logo.png";
 import quenticLogo from "public/assets/images/quentic-logo.png";
 import uhsLogo from "public/assets/images/uhs-logo.png";
 import ersLogo from "public/assets/images/ers-logo.png";
+import { classNames } from "utils/classNames";
 
-const companies: readonly ItemProps[] = [
+const companies: readonly Pick<ItemProps, "src" | "alt">[] = [
   { src: unityLogo, alt: "Unity" },
   { src: smartlyLogo, alt: "Smartly.io" },
   { src: quenticLogo, alt: "Quentic" },
@@ -22,8 +23,13 @@ export function LogoCloud() {
           Trusted by over 5 very average small businesses
         </p>
         <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-          {companies.map((company) => (
-            <Item key={company.alt} {...company} />
+          {companies.map((company, i) => (
+            <Item
+              key={company.alt}
+              {...company}
+              current={i + 1}
+              length={companies.length}
+            />
           ))}
         </div>
       </div>
@@ -34,11 +40,22 @@ export function LogoCloud() {
 type ItemProps = {
   src: Exclude<ImageProps["src"], string>;
   alt: ImageProps["alt"];
+  current: number;
+  length: number;
 };
 
-function Item({ src, alt }: ItemProps) {
+function Item({ src, alt, current, length }: ItemProps) {
+  const isLast = current === length;
+  const is2ndToLast = length - 1 === current;
+
   return (
-    <div className="relative filter grayscale opacity-40 h-12 flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
+    <div
+      className={classNames(
+        "relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1",
+        isLast ? "col-span-2 md:col-start-4" : "col-span-1",
+        is2ndToLast && "md:col-start-2"
+      )}
+    >
       <Image layout="fill" objectFit="contain" src={src} alt={alt} />
     </div>
   );

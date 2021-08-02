@@ -1,3 +1,3 @@
-# [theutz.com](https://theutz.com)
+# [michaelutz.dev](https://michaelutz.dev)
 
 My personal blog / portfolio website

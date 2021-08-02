@@ -1,8 +1,0 @@
-{
-  "name": "set-pr-status",
-  "private": true,
-  "main": "action.js",
-  "dependencies": {
-    "actions-toolkit": "5.0.0"
-  }
-}

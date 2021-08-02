@@ -16,13 +16,12 @@ export function Hero() {
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-center sm:text-5xl lg:text-6xl">
-              <span className="block text-white">Take control of your</span>
-              <span className="block text-indigo-200">customer support</span>
+              <span className="block text-white">Not Your Average</span>
+              <span className="block text-indigo-200">Web Dude</span>
             </h1>
             <p className="max-w-lg mx-auto mt-6 text-xl text-center text-indigo-200 sm:max-w-3xl">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
+              I&apos;m passionate about creating experiences for the web that
+              are useful, enjoyable, and intuitive.
             </p>
             <div className="max-w-sm mx-auto mt-10 sm:max-w-none sm:flex sm:justify-center">
               <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
@@ -30,13 +29,13 @@ export function Hero() {
                   href="#"
                   className="flex items-center justify-center px-4 py-3 text-base font-medium text-indigo-700 bg-white border border-transparent rounded-md shadow-sm hover:bg-indigo-50 sm:px-8"
                 >
-                  Get started
+                  Learn More
                 </a>
                 <a
                   href="#"
                   className="flex items-center justify-center px-4 py-3 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md shadow-sm bg-opacity-60 hover:bg-opacity-70 sm:px-8"
                 >
-                  Live demo
+                  Reach Out
                 </a>
               </div>
             </div>

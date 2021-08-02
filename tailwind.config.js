@@ -8,10 +8,17 @@ module.exports = {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
+      spacing: {
+        120: "30rem",
+        144: "36rem",
+        192: "48rem",
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      lineClamp: ["hover"],
+    },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp")],
 };

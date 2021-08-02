@@ -7,7 +7,7 @@ import uhsLogo from "public/assets/images/uhs-logo.png";
 import ersLogo from "public/assets/images/ers-logo.png";
 import { classNames } from "utils/classNames";
 
-const companies: readonly Pick<ItemProps, "src" | "alt">[] = [
+export const companies: readonly Pick<ItemProps, "src" | "alt">[] = [
   { src: unityLogo, alt: "Unity" },
   { src: smartlyLogo, alt: "Smartly.io" },
   { src: quenticLogo, alt: "Quentic" },
@@ -17,12 +17,15 @@ const companies: readonly Pick<ItemProps, "src" | "alt">[] = [
 
 export function LogoCloud() {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100" data-cy="logo-cloud">
       <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <p className="text-sm font-semibold tracking-wide text-center text-gray-500 uppercase">
           Trusted by a handful of former employers
         </p>
-        <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+        <div
+          data-cy="logo-cloud-container"
+          className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5"
+        >
           {companies.map((company, i) => (
             <Item
               key={company.alt}

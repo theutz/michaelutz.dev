@@ -196,7 +196,7 @@ exports[`<Index /> renders 1`] = `
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                    d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
@@ -210,22 +210,21 @@ exports[`<Index /> renders 1`] = `
               <h2
                 class="text-3xl font-extrabold tracking-tight text-gray-900"
               >
-                Stay on top of customer support
+                The Humans Have Spoken
               </h2>
               <p
                 class="mt-4 text-lg text-gray-500"
               >
-                Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+                Building tech products is also about building relationships. Here's what some of my co-workers have to say about working with me.
               </p>
               <div
                 class="mt-6"
               >
-                <a
-                  class="inline-flex px-4 py-2 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
-                  href="#"
+                <button
+                  class="flex inline-flex px-4 py-2 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
                 >
-                  Get started
-                </a>
+                  Read Another
+                </button>
               </div>
             </div>
           </div>
@@ -235,9 +234,9 @@ exports[`<Index /> renders 1`] = `
             <blockquote>
               <div>
                 <p
-                  class="text-base text-gray-500"
+                  class="text-base text-gray-500 whitespace-pre-line"
                 >
-                  “Cras velit quis eros eget rhoncus lacus ultrices sed diam. Sit orci risus aenean curabitur donec aliquet. Mi venenatis in euismod ut.”
+                  “I worked alongside Michael on the Web Development Team at FRN/UHS. Mike is super friendly and top of the line at his craft. His work in DevOps and JavaScript elevated our team's workflow to the next level, making everyone on our team better at what they do. Mike was our "go-to" guy whenever we had complex development issues. He always communicated clearly and timely while consistently delivering excellent results. It was a privilege to learn from and work with Mike!”
                 </p>
               </div>
               <footer
@@ -247,18 +246,29 @@ exports[`<Index /> renders 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <div
-                    class="flex-shrink-0"
+                    class="relative flex-shrink-0"
                   >
-                    <img
-                      alt=""
-                      class="w-6 h-6 rounded-full"
-                      src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                    />
+                    <div
+                      class="w-6 h-6"
+                    >
+                      <div
+                        style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+                      >
+                        <noscript />
+                        <img
+                          alt="Benjamin Wright"
+                          class="rounded-full"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div
                     class="text-base font-medium text-gray-700"
                   >
-                    Marcia Hill, Digital Marketing Manager
+                    Benjamin Wright, Director of Ecommerce @ Space Race
                   </div>
                 </div>
               </footer>

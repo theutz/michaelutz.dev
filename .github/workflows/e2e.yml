@@ -6,7 +6,7 @@ jobs:
     if: github.event.deployment_status.state == 'pending'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Set status to "pending"
         uses: ./.github/actions/set-pr-status
         env:
@@ -23,7 +23,7 @@ jobs:
       TERM: xterm
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Run E2E tests
         run: cypress --config baseUrl=${{ github.event.deployment_status.target_url }}

@@ -1,6 +1,7 @@
 FROM node:slim
 
-COPY package*.json ./
+COPY package.json .
+COPY package-lock.json .
 
 RUN npm ci
 

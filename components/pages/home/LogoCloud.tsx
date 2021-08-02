@@ -20,7 +20,7 @@ export function LogoCloud() {
     <div className="bg-gray-100">
       <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <p className="text-sm font-semibold tracking-wide text-center text-gray-500 uppercase">
-          Trusted by over 5 very average small businesses
+          Trusted by a handful of former employers
         </p>
         <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
           {companies.map((company, i) => (

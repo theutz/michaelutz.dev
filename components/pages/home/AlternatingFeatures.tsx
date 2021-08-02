@@ -5,6 +5,8 @@ import {
   useEndorsement,
   Endorsement as EndorsementType,
 } from "hooks/useEndorsement";
+import { useState } from "react";
+import { classNames } from "utils/classNames";
 
 function Endorsement({
   name,
@@ -13,10 +15,16 @@ function Endorsement({
   content,
   image,
 }: EndorsementType) {
+  const [showFull, setShowFull] = useState(false);
   return (
     <blockquote>
-      <div>
-        <p className="text-base text-gray-500 whitespace-pre-line">
+      <div onClick={() => setShowFull((prev) => !prev)}>
+        <p
+          className={classNames(
+            "text-base text-gray-500 block whitespace-pre-line cursor-pointer",
+            !showFull && "line-clamp-3"
+          )}
+        >
           &ldquo;{content.trim()}&rdquo;
         </p>
       </div>

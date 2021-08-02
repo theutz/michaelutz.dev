@@ -11,4 +11,8 @@ describe("<Index />", () => {
     // Assert
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it("breaks", () => {
+    expect(true).toBe(false);
+  });
 });

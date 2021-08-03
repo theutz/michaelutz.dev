@@ -1,4 +1,0 @@
-{
-  "*.(js|ts)x?": ["eslint --cache --fix", "prettier --write"],
-  "*.ts(x)?": ["jest --bail --findRelatedTests"]
-}

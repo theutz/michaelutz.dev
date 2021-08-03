@@ -72,7 +72,7 @@ export function AlternatingFeatureSections() {
               </div>
               <div className="mt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                  The Humans Have Spoken
+                  The humans have spoken
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
                   Building tech products is also about building relationships.

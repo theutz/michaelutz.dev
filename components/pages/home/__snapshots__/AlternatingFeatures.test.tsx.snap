@@ -46,7 +46,7 @@ exports[`<AlternatingFeatureSections /> renders 1`] = `
               <h2
                 class="text-3xl font-extrabold tracking-tight text-gray-900"
               >
-                The Humans Have Spoken
+                The humans have spoken
               </h2>
               <p
                 class="mt-4 text-lg text-gray-500"

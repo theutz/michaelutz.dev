@@ -19,7 +19,7 @@ exports[`<CTA /> renders 1`] = `
         <span
           class="block text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text"
         >
-          Get in touch or create an account.
+          Get in touch!
         </span>
       </h2>
       <div
@@ -29,13 +29,7 @@ exports[`<CTA /> renders 1`] = `
           class="flex items-center justify-center px-4 py-3 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
           href="#"
         >
-          Learn more
-        </a>
-        <a
-          class="flex items-center justify-center px-4 py-3 text-base font-medium text-indigo-800 border border-transparent rounded-md shadow-sm bg-indigo-50 hover:bg-indigo-100"
-          href="#"
-        >
-          Get started
+          Contact Me
         </a>
       </div>
     </div>

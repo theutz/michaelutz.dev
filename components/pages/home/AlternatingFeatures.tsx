@@ -95,11 +95,14 @@ export function AlternatingFeatureSections() {
           </div>
           <div className="mt-12 sm:mt-16 lg:mt-0">
             <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
-              <img
-                className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="/assets/images/seattle-skyline.jpg"
-                alt="Inbox user interface"
-              />
+              <div className="relative lg:m-0 lg:h-full">
+                <img
+                  className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none filter brightness-90"
+                  src="/assets/images/seattle-skyline.jpg"
+                  alt="Inbox user interface"
+                />
+                <div className="absolute inset-0 mix-blend-overlay bg-gradient-to-r from-purple-800 to-indigo-600 lg:w-massive"></div>
+              </div>
             </div>
           </div>
         </div>

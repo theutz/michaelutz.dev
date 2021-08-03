@@ -24,7 +24,7 @@ export function CTA() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CTA;
+export default CTA

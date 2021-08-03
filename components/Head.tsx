@@ -1,4 +1,4 @@
-import NextHead from "next/head";
+import NextHead from "next/head"
 
 export function Head() {
   return (
@@ -22,7 +22,7 @@ export function Head() {
         data-cy="font-stylesheet"
       />
     </NextHead>
-  );
+  )
 }
 
-export default Head;
+export default Head

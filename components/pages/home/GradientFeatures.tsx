@@ -7,7 +7,7 @@ import {
   ReplyIcon,
   TrashIcon,
   UsersIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/outline"
 
 const features = [
   {
@@ -58,7 +58,7 @@ const features = [
       "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
     icon: HeartIcon,
   },
-];
+]
 
 export function GradientFeatures() {
   return (
@@ -95,7 +95,7 @@ export function GradientFeatures() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default GradientFeatures;
+export default GradientFeatures

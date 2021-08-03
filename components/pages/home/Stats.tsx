@@ -24,7 +24,7 @@ const metrics = [
     emphasis: "Issues resolved",
     rest: "lacus nibh integer quis.",
   },
-];
+]
 
 export function Stats() {
   return (
@@ -78,7 +78,7 @@ export function Stats() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Stats;
+export default Stats

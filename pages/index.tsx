@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import Hero from "components/pages/home/Hero";
-import LogoCloud from "components/pages/home/LogoCloud";
-import AlternatingFeatureSections from "components/pages/home/AlternatingFeatures";
-import GradientFeatures from "components/pages/home/GradientFeatures";
-import Stats from "components/pages/home/Stats";
-import CTA from "components/pages/home/CTA";
+import Hero from "components/pages/home/Hero"
+import LogoCloud from "components/pages/home/LogoCloud"
+import AlternatingFeatureSections from "components/pages/home/AlternatingFeatures"
+import GradientFeatures from "components/pages/home/GradientFeatures"
+import Stats from "components/pages/home/Stats"
+import CTA from "components/pages/home/CTA"
 
 export function Index() {
   return (
@@ -16,7 +16,7 @@ export function Index() {
       <Stats />
       <CTA />
     </>
-  );
+  )
 }
 
-export default Index;
+export default Index

@@ -1,62 +1,62 @@
 import {
-  ChatAltIcon,
-  DocumentReportIcon,
-  HeartIcon,
-  InboxIcon,
-  PencilAltIcon,
-  ReplyIcon,
-  TrashIcon,
-  UsersIcon,
+  BeakerIcon,
+  ChatIcon,
+  DatabaseIcon,
+  DocumentDuplicateIcon,
+  HomeIcon,
+  QuestionMarkCircleIcon,
+  SparklesIcon,
+  TerminalIcon,
 } from "@heroicons/react/outline"
 
 const features = [
   {
-    name: "Unlimited Inboxes",
+    name: "The Basics",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: InboxIcon,
+      "HTML, CSS, and JavaScript. The world runs on this stuff, and I've been using it for decades.",
+    icon: HomeIcon,
   },
   {
-    name: "Manage Team Members",
+    name: "Front-End Frameworks",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: UsersIcon,
+      "Tons of experience with React, and some experience with Angular and Vue. I'd love to learn Svelte.",
+    icon: SparklesIcon,
   },
   {
-    name: "Spam Report",
+    name: "Speaking of React...",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: TrashIcon,
+      "Familiar with all the old favorites like Redux & Enzyme, as well as all the newest goodies.",
+    icon: ChatIcon,
   },
   {
-    name: "Compose in Markdown",
+    name: "What About The Backend?",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: PencilAltIcon,
+      "I can write a mean backend (pun intended), but I like PostgreSQL and TypeScript for sanity.",
+    icon: DatabaseIcon,
   },
   {
-    name: "Team Reporting",
+    name: "Can you do WordPress?",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: DocumentReportIcon,
+      "Sure! I've been writing WordPress sites since 2008 or so. PHP & MySQL are my friends, too.",
+    icon: DocumentDuplicateIcon,
   },
   {
-    name: "Saved Replies",
+    name: "Can you write tests?",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: ReplyIcon,
+      "I love writing tests! Unit testing with Jest and integration/end-to-end testing with Cypress.",
+    icon: BeakerIcon,
   },
   {
-    name: "Email Commenting",
+    name: "So, you just do tech stuff?",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: ChatAltIcon,
+      "Not at all! I have a passion and eye for design, user experience, and accessibility.",
+    icon: TerminalIcon,
   },
   {
-    name: "Connect with Customers",
+    name: "How did you make this site?",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: HeartIcon,
+      "I work smarter not harder. This site is made and deployed with Tailwind CSS & UI, NextJS, and Vercel.",
+    icon: QuestionMarkCircleIcon,
   },
 ]
 
@@ -65,11 +65,12 @@ export function GradientFeatures() {
     <div className="bg-gradient-to-r from-purple-800 to-indigo-700">
       <div className="max-w-4xl px-4 py-16 mx-auto sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
         <h2 className="text-3xl font-extrabold tracking-tight text-white">
-          Inbox support built for efficiency
+          Skills you&apos;ll definitely want
         </h2>
         <p className="max-w-3xl mt-4 text-lg text-purple-200">
-          Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
-          magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis in.
+          I&apos;ve been making web stuff for decades. I&apos;ve got experience
+          with multiple content management systems, and I love the new JAMstack
+          stuff!
         </p>
         <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
           {features.map((feature) => (

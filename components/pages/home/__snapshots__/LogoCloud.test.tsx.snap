@@ -4,6 +4,7 @@ exports[`<LogoCloud /> renders 1`] = `
 <DocumentFragment>
   <div
     class="bg-gray-100"
+    data-cy="logo-cloud"
   >
     <div
       class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8"
@@ -11,55 +12,86 @@ exports[`<LogoCloud /> renders 1`] = `
       <p
         class="text-sm font-semibold tracking-wide text-center text-gray-500 uppercase"
       >
-        Trusted by over 5 very average small businesses
+        Trusted by a handful of former employers
       </p>
       <div
         class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5"
+        data-cy="logo-cloud-container"
       >
         <div
-          class="flex justify-center col-span-1 md:col-span-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1"
         >
-          <img
-            alt="Tuple"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Unity"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-1 md:col-span-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1"
         >
-          <img
-            alt="Mirage"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Smartly.io"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-1 md:col-span-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1"
         >
-          <img
-            alt="StaticKit"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Quentic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-1 md:col-span-2 md:col-start-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1 md:col-start-2"
         >
-          <img
-            alt="Transistor"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Universal Hospital Systems"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-2 md:col-span-2 md:col-start-4 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-2 md:col-start-4"
         >
-          <img
-            alt="Workcation"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Emergency Reporting"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -88,6 +88,39 @@
     "related": ["components/{}", "components/{}"],
     "type": "snap"
   },
+  "hooks/*.tsx": {
+    "alternate": "hooks/{}.test.tsx",
+    "related": ["hooks/{}.test.tsx"],
+    "type": "hook",
+    "template": [
+      "import {open} useState {close} from 'react'",
+      "",
+      "export function {basename}() {open}",
+      "\treturn {open}{close};",
+      "{close};"
+    ]
+  },
+  "hooks/*.test.tsx": {
+    "alternate": "hooks/{}.tsx",
+    "related": ["hooks/{}.tsx"],
+    "type": "test",
+    "template": [
+      "import {open} renderHook, act {close} from '@testing-library/react-hooks'",
+      "import {open} {basename} {close} from 'hooks/{}'",
+      "",
+      "describe(`{basename}`, () => {open}",
+      "\tit(`fails`, () => {open}",
+      "\t\tconst {open} result {close} = renderHook(() => {basename}())",
+      "",
+      "\t\tact(() => {open}",
+      "\t\t\tresult.current.ACTION()",
+      "\t\t{close});",
+      "",
+      "\t\texpect(result.current.STATE).toBe(false)",
+      "\t{close})",
+      "{close});"
+    ]
+  },
   "*": {
     "make": "npm run build"
   }

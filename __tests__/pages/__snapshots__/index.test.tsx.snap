@@ -35,18 +35,18 @@ exports[`<Index /> renders 1`] = `
             <span
               class="block text-white"
             >
-              Take control of your
+              Not Your Average
             </span>
             <span
               class="block text-indigo-200"
             >
-              customer support
+              Web Dude
             </span>
           </h1>
           <p
             class="max-w-lg mx-auto mt-6 text-xl text-center text-indigo-200 sm:max-w-3xl"
           >
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+            I'm passionate about creating experiences for the web that are useful, enjoyable, and intuitive.
           </p>
           <div
             class="max-w-sm mx-auto mt-10 sm:max-w-none sm:flex sm:justify-center"
@@ -58,13 +58,13 @@ exports[`<Index /> renders 1`] = `
                 class="flex items-center justify-center px-4 py-3 text-base font-medium text-indigo-700 bg-white border border-transparent rounded-md shadow-sm hover:bg-indigo-50 sm:px-8"
                 href="#"
               >
-                Get started
+                Learn More
               </a>
               <a
                 class="flex items-center justify-center px-4 py-3 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md shadow-sm bg-opacity-60 hover:bg-opacity-70 sm:px-8"
                 href="#"
               >
-                Live demo
+                Reach Out
               </a>
             </div>
           </div>
@@ -74,6 +74,7 @@ exports[`<Index /> renders 1`] = `
   </div>
   <div
     class="bg-gray-100"
+    data-cy="logo-cloud"
   >
     <div
       class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8"
@@ -81,55 +82,86 @@ exports[`<Index /> renders 1`] = `
       <p
         class="text-sm font-semibold tracking-wide text-center text-gray-500 uppercase"
       >
-        Trusted by over 5 very average small businesses
+        Trusted by a handful of former employers
       </p>
       <div
         class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5"
+        data-cy="logo-cloud-container"
       >
         <div
-          class="flex justify-center col-span-1 md:col-span-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1"
         >
-          <img
-            alt="Tuple"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Unity"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-1 md:col-span-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1"
         >
-          <img
-            alt="Mirage"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Smartly.io"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-1 md:col-span-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1"
         >
-          <img
-            alt="StaticKit"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Quentic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-1 md:col-span-2 md:col-start-2 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-1 md:col-start-2"
         >
-          <img
-            alt="Transistor"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Universal Hospital Systems"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
         <div
-          class="flex justify-center col-span-2 md:col-span-2 md:col-start-4 lg:col-span-1"
+          class="relative filter grayscale opacity-40 h-12 md:col-span-2 flex justify-center lg:col-span-1 col-span-2 md:col-start-4"
         >
-          <img
-            alt="Workcation"
-            class="h-12"
-            src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-          />
+          <div
+            style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+          >
+            <noscript />
+            <img
+              alt="Emergency Reporting"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -164,7 +196,7 @@ exports[`<Index /> renders 1`] = `
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                    d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
@@ -178,22 +210,21 @@ exports[`<Index /> renders 1`] = `
               <h2
                 class="text-3xl font-extrabold tracking-tight text-gray-900"
               >
-                Stay on top of customer support
+                The Humans Have Spoken
               </h2>
               <p
                 class="mt-4 text-lg text-gray-500"
               >
-                Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+                Building tech products is also about building relationships. Here's what some of my co-workers have to say about working with me.
               </p>
               <div
                 class="mt-6"
               >
-                <a
-                  class="inline-flex px-4 py-2 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
-                  href="#"
+                <button
+                  class="flex inline-flex px-4 py-2 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
                 >
-                  Get started
-                </a>
+                  Read Another
+                </button>
               </div>
             </div>
           </div>
@@ -203,9 +234,9 @@ exports[`<Index /> renders 1`] = `
             <blockquote>
               <div>
                 <p
-                  class="text-base text-gray-500"
+                  class="text-base text-gray-500 block whitespace-pre-line cursor-pointer line-clamp-3"
                 >
-                  “Cras velit quis eros eget rhoncus lacus ultrices sed diam. Sit orci risus aenean curabitur donec aliquet. Mi venenatis in euismod ut.”
+                  “I worked alongside Michael on the Web Development Team at FRN/UHS. Mike is super friendly and top of the line at his craft. His work in DevOps and JavaScript elevated our team's workflow to the next level, making everyone on our team better at what they do. Mike was our "go-to" guy whenever we had complex development issues. He always communicated clearly and timely while consistently delivering excellent results. It was a privilege to learn from and work with Mike!”
                 </p>
               </div>
               <footer
@@ -215,18 +246,29 @@ exports[`<Index /> renders 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <div
-                    class="flex-shrink-0"
+                    class="relative flex-shrink-0"
                   >
-                    <img
-                      alt=""
-                      class="w-6 h-6 rounded-full"
-                      src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                    />
+                    <div
+                      class="w-6 h-6"
+                    >
+                      <div
+                        style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+                      >
+                        <noscript />
+                        <img
+                          alt="Benjamin Wright"
+                          class="rounded-full"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div
                     class="text-base font-medium text-gray-700"
                   >
-                    Marcia Hill, Digital Marketing Manager
+                    Benjamin Wright, Director of Ecommerce @ Space Race
                   </div>
                 </div>
               </footer>
@@ -239,11 +281,18 @@ exports[`<Index /> renders 1`] = `
           <div
             class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full"
           >
-            <img
-              alt="Inbox user interface"
-              class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-              src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
-            />
+            <div
+              class="relative lg:m-0 lg:h-full"
+            >
+              <img
+                alt="Inbox user interface"
+                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none filter brightness-90"
+                src="/assets/images/seattle-skyline.jpg"
+              />
+              <div
+                class="absolute inset-0 mix-blend-overlay bg-gradient-to-r from-purple-800 to-indigo-600 lg:w-massive"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -271,7 +320,7 @@ exports[`<Index /> renders 1`] = `
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
@@ -285,12 +334,12 @@ exports[`<Index /> renders 1`] = `
               <h2
                 class="text-3xl font-extrabold tracking-tight text-gray-900"
               >
-                Better understand your customers
+                Better understand your developer
               </h2>
               <p
                 class="mt-4 text-lg text-gray-500"
               >
-                Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+                I was born in lovely Seattle, Washington in the USA. I met my wife in Nashville, Tennessee, and we've moved to Helsinki, Finland to start a family.
               </p>
               <div
                 class="mt-6"
@@ -311,11 +360,18 @@ exports[`<Index /> renders 1`] = `
           <div
             class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full"
           >
-            <img
-              alt="Customer profile user interface"
-              class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-              src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg"
-            />
+            <div
+              class="relative lg:h-full lg:m-0"
+            >
+              <img
+                alt="Customer profile user interface"
+                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                src="/assets/images/helsinki-skyline.jpg"
+              />
+              <div
+                class="absolute inset-0 lg:left-auto mix-blend-overlay bg-gradient-to-r from-purple-800 to-indigo-600 lg:w-massive"
+              />
+            </div>
           </div>
         </div>
       </div>

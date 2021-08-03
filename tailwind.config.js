@@ -12,6 +12,7 @@ module.exports = {
         120: "30rem",
         144: "36rem",
         192: "48rem",
+        massive: "1000rem",
       },
     },
   },

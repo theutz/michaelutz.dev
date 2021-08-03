@@ -142,11 +142,14 @@ export function AlternatingFeatureSections() {
           </div>
           <div className="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
             <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
-              <img
-                className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="/assets/images/helsinki-skyline.jpg"
-                alt="Customer profile user interface"
-              />
+              <div className="relative lg:h-full lg:m-0">
+                <img
+                  className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                  src="/assets/images/helsinki-skyline.jpg"
+                  alt="Customer profile user interface"
+                />
+                <div className="absolute inset-0 lg:left-auto mix-blend-overlay bg-gradient-to-r from-purple-800 to-indigo-600 lg:w-massive"></div>
+              </div>
             </div>
           </div>
         </div>

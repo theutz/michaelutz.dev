@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
-import { ThumbUpIcon, GlobeIcon } from "@heroicons/react/outline";
+import Image from "next/image"
+import { ThumbUpIcon, GlobeIcon } from "@heroicons/react/outline"
 import {
   useEndorsement,
   Endorsement as EndorsementType,
-} from "hooks/useEndorsement";
-import { useState } from "react";
-import { classNames } from "utils/classNames";
+} from "hooks/useEndorsement"
+import { useState } from "react"
+import { classNames } from "utils/classNames"
 
 function Endorsement({
   name,
@@ -15,7 +15,7 @@ function Endorsement({
   content,
   image,
 }: EndorsementType) {
-  const [showFull, setShowFull] = useState(false);
+  const [showFull, setShowFull] = useState(false)
   return (
     <blockquote>
       <div onClick={() => setShowFull((prev) => !prev)}>
@@ -47,11 +47,11 @@ function Endorsement({
         </div>
       </footer>
     </blockquote>
-  );
+  )
 }
 
 export function AlternatingFeatureSections() {
-  const { endorsement, increment } = useEndorsement();
+  const { endorsement, increment } = useEndorsement()
   return (
     <div className="relative pt-16 pb-32 overflow-hidden">
       <div
@@ -154,7 +154,7 @@ export function AlternatingFeatureSections() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default AlternatingFeatureSections;
+export default AlternatingFeatureSections

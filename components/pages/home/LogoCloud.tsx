@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import Image, { ImageProps } from "next/image";
-import unityLogo from "public/assets/images/unity-logo.png";
-import smartlyLogo from "public/assets/images/smartly-logo.png";
-import quenticLogo from "public/assets/images/quentic-logo.png";
-import uhsLogo from "public/assets/images/uhs-logo.png";
-import ersLogo from "public/assets/images/ers-logo.png";
-import { classNames } from "utils/classNames";
+import Image, { ImageProps } from "next/image"
+import unityLogo from "public/assets/images/unity-logo.png"
+import smartlyLogo from "public/assets/images/smartly-logo.png"
+import quenticLogo from "public/assets/images/quentic-logo.png"
+import uhsLogo from "public/assets/images/uhs-logo.png"
+import ersLogo from "public/assets/images/ers-logo.png"
+import { classNames } from "utils/classNames"
 
 export const companies: readonly Pick<ItemProps, "src" | "alt">[] = [
   { src: unityLogo, alt: "Unity" },
@@ -13,7 +13,7 @@ export const companies: readonly Pick<ItemProps, "src" | "alt">[] = [
   { src: quenticLogo, alt: "Quentic" },
   { src: uhsLogo, alt: "Universal Hospital Systems" },
   { src: ersLogo, alt: "Emergency Reporting" },
-];
+]
 
 export function LogoCloud() {
   return (
@@ -37,19 +37,19 @@ export function LogoCloud() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 type ItemProps = {
-  src: Exclude<ImageProps["src"], string>;
-  alt: ImageProps["alt"];
-  current: number;
-  length: number;
-};
+  src: Exclude<ImageProps["src"], string>
+  alt: ImageProps["alt"]
+  current: number
+  length: number
+}
 
 function Item({ src, alt, current, length }: ItemProps) {
-  const isLast = current === length;
-  const is2ndToLast = length - 1 === current;
+  const isLast = current === length
+  const is2ndToLast = length - 1 === current
 
   return (
     <div
@@ -61,7 +61,7 @@ function Item({ src, alt, current, length }: ItemProps) {
     >
       <Image layout="fill" objectFit="contain" src={src} alt={alt} />
     </div>
-  );
+  )
 }
 
-export default LogoCloud;
+export default LogoCloud

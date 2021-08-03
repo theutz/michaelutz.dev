@@ -1,22 +1,22 @@
-import { render, screen } from "@testing-library/react";
-import { Default } from "components/layouts/Default";
+import { render, screen } from "@testing-library/react"
+import { Default } from "components/layouts/Default"
 
 describe("<Default />", () => {
-  let asFragment: () => void;
+  let asFragment: () => void
 
   beforeEach(() => {
     // Arrange
     // Act
-    ({ asFragment } = render(<Default>Hello</Default>));
-  });
+    ;({ asFragment } = render(<Default>Hello</Default>))
+  })
 
   // Assert
 
   it("renders", () => {
-    expect(asFragment()).toMatchSnapshot();
-  });
+    expect(asFragment()).toMatchSnapshot()
+  })
 
   it("passes down children", () => {
-    expect(screen.getByText("Hello")).toBeVisible();
-  });
-});
+    expect(screen.getByText("Hello")).toBeVisible()
+  })
+})

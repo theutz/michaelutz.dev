@@ -1,5 +1,5 @@
-import { renderHook, act } from "@testing-library/react-hooks";
-import { useEndorsement, Endorsement } from "hooks/useEndorsement";
+import { renderHook, act } from "@testing-library/react-hooks"
+import { useEndorsement, Endorsement } from "hooks/useEndorsement"
 
 const data: readonly Endorsement[] = [
   {
@@ -16,48 +16,48 @@ const data: readonly Endorsement[] = [
     image: { src: "/path-2", width: 100, height: 100 },
     company: "company 2",
   },
-];
+]
 
 describe(`useEndorsement`, () => {
   it(`throws when data is empty`, () => {
-    expect(() => useEndorsement([])).toThrow(`Endorsements cannot be empty.`);
-  });
+    expect(() => useEndorsement([])).toThrow(`Endorsements cannot be empty.`)
+  })
 
   it(`returns a default item`, () => {
     // Arrange
     // Act
-    const { result } = renderHook(() => useEndorsement(data));
+    const { result } = renderHook(() => useEndorsement(data))
 
     // Assert
-    expect(result.current.endorsement).toMatchObject(data[0]);
-  });
+    expect(result.current.endorsement).toMatchObject(data[0])
+  })
 
   it("returns a new item after incrementing", () => {
     // Arrange
-    const { result } = renderHook(() => useEndorsement(data));
+    const { result } = renderHook(() => useEndorsement(data))
 
     // Act
     act(() => {
-      result.current.increment();
-    });
+      result.current.increment()
+    })
 
     // Assert
-    expect(result.current.endorsement).toMatchObject(data[1]);
-  });
+    expect(result.current.endorsement).toMatchObject(data[1])
+  })
 
   it("resets to initial item when list is exhausted", () => {
     // Arrange
-    const { result } = renderHook(() => useEndorsement(data));
+    const { result } = renderHook(() => useEndorsement(data))
 
     // Act
     act(() => {
-      result.current.increment();
-    });
+      result.current.increment()
+    })
     act(() => {
-      result.current.increment();
-    });
+      result.current.increment()
+    })
 
     // Assert
-    expect(result.current.endorsement).toMatchObject(data[0]);
-  });
-});
+    expect(result.current.endorsement).toMatchObject(data[0])
+  })
+})

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, Transition } from "@headlessui/react"
 import {
   AnnotationIcon,
   ChatAlt2Icon,
@@ -7,10 +7,10 @@ import {
   MenuIcon,
   QuestionMarkCircleIcon,
   XIcon,
-} from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
-import React, { Fragment } from "react";
-import { classNames } from "utils/classNames";
+} from "@heroicons/react/outline"
+import { ChevronDownIcon } from "@heroicons/react/solid"
+import React, { Fragment } from "react"
+import { classNames } from "utils/classNames"
 
 const solutions = [
   {
@@ -38,7 +38,7 @@ const solutions = [
     href: "#",
     icon: QuestionMarkCircleIcon,
   },
-];
+]
 export function Header() {
   return (
     <header>
@@ -260,7 +260,7 @@ export function Header() {
         )}
       </Popover>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

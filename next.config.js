@@ -3,4 +3,4 @@ module.exports = {
     dirs: ["pages", "components", "hooks", "utils"],
   },
   reactStrictMode: true,
-};
+}

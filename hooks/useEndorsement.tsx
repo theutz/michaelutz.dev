@@ -1,15 +1,15 @@
-import { ImageProps } from "next/image";
-import { useCallback, useState } from "react";
-import benWright from "public/assets/images/ben-wright.jpg";
-import sydneyBolinger from "public/assets/images/sydney-bolinger.jpg";
+import { ImageProps } from "next/image"
+import { useCallback, useState } from "react"
+import benWright from "public/assets/images/ben-wright.jpg"
+import sydneyBolinger from "public/assets/images/sydney-bolinger.jpg"
 
 export type Endorsement = {
-  name: string;
-  title: string;
-  company: string;
-  content: string;
-  image: Exclude<ImageProps["src"], string>;
-};
+  name: string
+  title: string
+  company: string
+  content: string
+  image: Exclude<ImageProps["src"], string>
+}
 
 export const endorsements: readonly Endorsement[] = [
   {
@@ -36,29 +36,29 @@ Michael was a great mentor for me, and his analytical mind proved very helpful d
 I would highly recommend Michael for future roles and responsibilities, as well as his musical abilities (he rocks). 
 `,
   },
-];
+]
 
 export function useEndorsement(data: readonly Endorsement[] = endorsements) {
-  if (data.length === 0) throw new Error(`Endorsements cannot be empty.`);
+  if (data.length === 0) throw new Error(`Endorsements cannot be empty.`)
 
-  const defaultIndex = 0;
-  const [index, setIndex] = useState(defaultIndex);
+  const defaultIndex = 0
+  const [index, setIndex] = useState(defaultIndex)
 
   const reset = useCallback(() => {
-    setIndex(defaultIndex);
-  }, [setIndex]);
+    setIndex(defaultIndex)
+  }, [setIndex])
 
   const increment = useCallback(() => {
     if (index === data.length - 1) {
-      reset();
-      return;
+      reset()
+      return
     }
 
-    setIndex((prev) => prev + 1);
-    return;
-  }, [index, setIndex, reset, data]);
+    setIndex((prev) => prev + 1)
+    return
+  }, [index, setIndex, reset, data])
 
-  const endorsement = data[index];
+  const endorsement = data[index]
 
-  return { endorsement, increment, reset };
+  return { endorsement, increment, reset }
 }

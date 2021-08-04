@@ -1,4 +1,31 @@
+import { FormEvent, useRef, useState } from "react"
+
 export function Subscribe() {
+  const inputEl = useRef<HTMLInputElement>(null)
+  const [message, setMessage] = useState("")
+
+  const subscribe = async (e: FormEvent) => {
+    e.preventDefault()
+
+    const res = await fetch("/api/subscribe", {
+      body: JSON.stringify({ email: inputEl.current?.value }),
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+    })
+
+    const { error } = await res.json()
+
+    if (error) {
+      setMessage(error.title)
+      return
+    }
+
+    if (inputEl.current) {
+      inputEl.current.value = ""
+      setMessage("Success! You are now subscribed to the newsletter.")
+    }
+  }
+
   return (
     <>
       <h3 className="text-sm font-semibold tracking-wider text-gray-400 uppercase">
@@ -7,11 +34,12 @@ export function Subscribe() {
       <p className="mt-4 text-base text-gray-500">
         The latest news, articles, and resources, sent to your inbox weekly.
       </p>
-      <form className="mt-4 sm:flex sm:max-w-md">
+      <form className="mt-4 sm:flex sm:max-w-md" onSubmit={subscribe}>
         <label htmlFor="email-address" className="sr-only">
           Email address
         </label>
         <input
+          ref={inputEl}
           type="email"
           name="email-address"
           id="email-address"
@@ -29,6 +57,7 @@ export function Subscribe() {
           </button>
         </div>
       </form>
+      <div>{message}</div>
     </>
   )
 }

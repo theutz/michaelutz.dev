@@ -248,6 +248,7 @@ exports[`<Footer /> renders 1`] = `
               </button>
             </div>
           </form>
+          <div />
         </div>
       </div>
       <div

@@ -41,5 +41,6 @@ exports[`<Subscribe /> renders 1`] = `
       </button>
     </div>
   </form>
+  <div />
 </DocumentFragment>
 `;

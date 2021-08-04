@@ -17,24 +17,23 @@ export default async function subscribe(
   }
 
   try {
-    await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID!, {
-      email_address: email,
-      status: "subscribed" as Status,
-    })
-
-    return res.status(201).json({ error: "" })
-  } catch (error) {
-    try {
-      const { text } = error.response
-      const { status, ...rest } = JSON.parse(text)
-
-      if (status >= 400 && status < 500) {
-        return res.status(status).json({ error: { status, ...rest } })
+    const { email_address, status } = (await mailchimp.lists.addListMember(
+      process.env.MAILCHIMP_AUDIENCE_ID!,
+      {
+        email_address: email,
+        status: "subscribed" as Status,
       }
-    } catch (e) {
-      console.error(e)
+    )) as unknown as { email_address: string; status: string }
+
+    return res.status(201).json({ email: email_address, status })
+  } catch (error) {
+    const { text } = error.response
+    const { status, ...rest } = JSON.parse(text)
+
+    if (Number(status) >= 400 && Number(status) < 500) {
+      return res.status(status).json({ status, ...rest })
     }
 
-    return res.status(500).json({ error: error.message || error.toString() })
+    return res.status(500).json("An unexpected error occurred.")
   }
 }

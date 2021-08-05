@@ -35,7 +35,8 @@ function StatusIcon({ status }: { status: Status }) {
         className={classNames(
           "w-5 h-5 text-gray-400 stroke-current",
           status === "error" && "text-red-500",
-          status === "success" && "text-purple-600"
+          status === "success" && "text-purple-600",
+          status === "loading" && "animate-spin"
         )}
         aria-hidden="true"
       />

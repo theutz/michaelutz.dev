@@ -1,30 +1,43 @@
-import { FormEvent, useRef, useState } from "react"
+import { useSubscribe } from "hooks/useSubscribe"
+import { FormEvent, useCallback, useRef } from "react"
+import { classNames } from "utils/classNames"
 
 export function Subscribe() {
   const inputEl = useRef<HTMLInputElement>(null)
-  const [message, setMessage] = useState("")
+  const { subscribe, data, error } = useSubscribe()
 
-  const subscribe = async (e: FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault()
 
-    const res = await fetch("/api/subscribe", {
-      body: JSON.stringify({ email: inputEl.current?.value }),
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-    })
+      if (!inputEl.current) return
 
-    const { error } = await res.json()
+      subscribe(inputEl.current.value)
+    },
+    [subscribe]
+  )
 
-    if (error) {
-      setMessage(error.title)
-      return
-    }
+  // const subscribe = async (e: FormEvent) => {
+  //   e.preventDefault()
 
-    if (inputEl.current) {
-      inputEl.current.value = ""
-      setMessage("Success! You are now subscribed to the newsletter.")
-    }
-  }
+  //   const res = await fetch("/api/subscribe", {
+  //     body: JSON.stringify({ email: inputEl.current?.value }),
+  //     headers: { "Content-Type": "application/json" },
+  //     method: "POST",
+  //   })
+
+  //   const { error } = await res.json()
+
+  //   if (error) {
+  //     setMessage(error.title)
+  //     return
+  //   }
+
+  //   if (inputEl.current) {
+  //     inputEl.current.value = ""
+  //     setMessage("Success! You are now subscribed to the newsletter.")
+  //   }
+  // }
 
   return (
     <>
@@ -34,7 +47,7 @@ export function Subscribe() {
       <p className="mt-4 text-base text-gray-500">
         The latest news, articles, and resources, sent to your inbox weekly.
       </p>
-      <form className="mt-4 sm:flex sm:max-w-md" onSubmit={subscribe}>
+      <form className="mt-4 sm:flex sm:max-w-md" onSubmit={handleSubmit}>
         <label htmlFor="email-address" className="sr-only">
           Email address
         </label>
@@ -57,7 +70,19 @@ export function Subscribe() {
           </button>
         </div>
       </form>
-      <div>{message}</div>
+      <div
+        className={classNames(
+          "mt-2 text-sm",
+          error && "text-red-500",
+          data && "text-green-500"
+        )}
+      >
+        {error
+          ? error.title
+          : data
+          ? "Success! You are now subscribed to the newsletter!"
+          : null}
+      </div>
     </>
   )
 }

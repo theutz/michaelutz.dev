@@ -248,7 +248,9 @@ exports[`<Footer /> renders 1`] = `
               </button>
             </div>
           </form>
-          <div />
+          <div
+            class="mt-2 text-sm"
+          />
         </div>
       </div>
       <div

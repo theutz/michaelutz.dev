@@ -1,21 +1,64 @@
-import { useSubscribe } from "hooks/useSubscribe"
-import { FormEvent, useCallback, useRef } from "react"
-import { MailIcon } from "@heroicons/react/outline"
+import { useSubscribe, Status } from "hooks/useSubscribe"
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react"
+import {
+  MailIcon,
+  RefreshIcon,
+  XCircleIcon,
+  CheckCircleIcon,
+} from "@heroicons/react/outline"
+import { classNames } from "utils/classNames"
+
+function StatusIcon({ status }: { status: Status }) {
+  let Icon
+
+  switch (status) {
+    case "loading": {
+      Icon = RefreshIcon
+      break
+    }
+    case "error": {
+      Icon = XCircleIcon
+      break
+    }
+    case "success": {
+      Icon = CheckCircleIcon
+      break
+    }
+    default: {
+      Icon = MailIcon
+    }
+  }
+
+  return (
+    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <Icon
+        className={classNames(
+          "w-5 h-5 text-gray-400 stroke-current",
+          status === "error" && "text-red-500",
+          status === "success" && "text-purple-600"
+        )}
+        aria-hidden="true"
+      />
+    </div>
+  )
+}
 
 export function Subscribe() {
-  const inputEl = useRef<HTMLInputElement>(null)
-  const { subscribe, data, error } = useSubscribe()
+  const [email, setEmail] = useState("")
+  const { subscribe, error, status, reset } = useSubscribe()
 
   const handleSubmit = useCallback(
     (e: FormEvent) => {
       e.preventDefault()
 
-      if (!inputEl.current) return
-
-      subscribe(inputEl.current.value)
+      subscribe(email)
     },
-    [subscribe]
+    [email, subscribe]
   )
+
+  useEffect(() => {
+    if (email === "" && status !== "ready") reset()
+  }, [email, reset, status])
 
   return (
     <>
@@ -29,12 +72,14 @@ export function Subscribe() {
         <label htmlFor="email-address" className="sr-only">
           Email address
         </label>
-        <div className="w-full relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <MailIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
-          </div>
+        <div className="relative w-full">
+          <StatusIcon status={status} />
           <input
-            ref={inputEl}
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value)
+              if (status !== "ready") reset()
+            }}
             type="email"
             name="email-address"
             id="email-address"
@@ -48,11 +93,15 @@ export function Subscribe() {
           <button
             type="submit"
             className="flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
+            disabled={status !== "ready"}
           >
             Subscribe
           </button>
         </div>
       </form>
+      {status === "error" && (
+        <div className="mt-2 ml-2 text-red-500">{error.title}</div>
+      )}
     </>
   )
 }

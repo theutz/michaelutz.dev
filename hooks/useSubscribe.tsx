@@ -13,7 +13,7 @@ const fetcher = async (url: string, email: string) => {
 
 const statuses = ["loading", "ready", "error", "success"] as const
 
-type Status = typeof statuses[number]
+export type Status = typeof statuses[number]
 
 export function useSubscribe() {
   const key = "/api/subscribe"
@@ -25,10 +25,14 @@ export function useSubscribe() {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     }
   )
 
   const subscribe = useCallback((email: string) => setEmail(email), [setEmail])
+  const reset = useCallback(() => {
+    setEmail(null)
+  }, [])
 
   let status: Status
 
@@ -47,5 +51,6 @@ export function useSubscribe() {
     data,
     error,
     status,
+    reset,
   }
 }

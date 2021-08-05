@@ -1,6 +1,6 @@
 import { useSubscribe } from "hooks/useSubscribe"
 import { FormEvent, useCallback, useRef } from "react"
-import { classNames } from "utils/classNames"
+import { MailIcon } from "@heroicons/react/outline"
 
 export function Subscribe() {
   const inputEl = useRef<HTMLInputElement>(null)
@@ -29,16 +29,21 @@ export function Subscribe() {
         <label htmlFor="email-address" className="sr-only">
           Email address
         </label>
-        <input
-          ref={inputEl}
-          type="email"
-          name="email-address"
-          id="email-address"
-          autoComplete="email"
-          required
-          className="w-full min-w-0 px-4 py-2 text-base text-gray-900 placeholder-gray-500 bg-white border border-gray-300 appearance-none rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:placeholder-gray-400"
-          placeholder="Enter your email"
-        />
+        <div className="w-full relative">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <MailIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
+          </div>
+          <input
+            ref={inputEl}
+            type="email"
+            name="email-address"
+            id="email-address"
+            autoComplete="email"
+            required
+            className="w-full min-w-0 py-2 pl-10 pr-4 text-base text-gray-900 placeholder-gray-500 bg-white border border-gray-300 appearance-none sm:py-3 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:placeholder-gray-400"
+            placeholder="Enter your email"
+          />
+        </div>
         <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
           <button
             type="submit"

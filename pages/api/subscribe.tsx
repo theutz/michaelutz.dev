@@ -27,6 +27,7 @@ export default async function subscribe(
 
     return res.status(201).json({ email: email_address, status })
   } catch (error) {
+    console.error(error)
     const { text } = error?.response ?? {}
     const { status, ...rest } = JSON.parse(text)
 

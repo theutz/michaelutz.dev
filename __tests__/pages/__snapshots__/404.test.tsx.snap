@@ -4,6 +4,7 @@ exports[`<NotFoundPage /> renders 1`] = `
 <DocumentFragment>
   <div
     class="bg-white min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8"
+    data-cy="404-page"
   >
     <div
       class="mx-auto max-w-max"
@@ -38,6 +39,7 @@ exports[`<NotFoundPage /> renders 1`] = `
           >
             <a
               class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hove:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              data-cy="return-home-link"
               href="#"
             >
               Go back home

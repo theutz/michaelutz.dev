@@ -2,7 +2,10 @@ import Link from "next/link"
 
 export function NotFoundPage() {
   return (
-    <div className="bg-white min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+    <div
+      data-cy="404-page"
+      className="bg-white min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8"
+    >
       <div className="mx-auto max-w-max">
         <main className="sm:flex">
           <p className="text-4xl font-extrabold text-indigo-600 sm:text-5xl">
@@ -20,6 +23,7 @@ export function NotFoundPage() {
             <div className="flex mt-10 space-x-3 sm:border-l sm:border-transparent sm:pl-6">
               <Link href="/">
                 <a
+                  data-cy="return-home-link"
                   href="#"
                   className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hove:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >

@@ -1,9 +1,16 @@
 import mailchimp, { Status } from "@mailchimp/mailchimp_marketing"
 import { NextApiRequest, NextApiResponse } from "next"
 
+const { MAILCHIMP_API_KEY, MAILCHIMP_API_SERVER, MAILCHIMP_AUDIENCE_ID } =
+  process.env
+
+if (!MAILCHIMP_API_KEY) throw new Error(`MAILCHIMP_API_KEY is not set.`)
+if (!MAILCHIMP_API_SERVER) throw new Error(`MAILCHIMP_API_SERVER is not set.`)
+if (!MAILCHIMP_AUDIENCE_ID) throw new Error(`MAILCHIMP_AUDIENCE_ID is not set.`)
+
 mailchimp.setConfig({
-  apiKey: process.env.MAILCHIMP_API_KEY,
-  server: process.env.MAILCHIMP_API_SERVER,
+  apiKey: MAILCHIMP_API_KEY,
+  server: MAILCHIMP_API_SERVER,
 })
 
 export default async function subscribe(
@@ -18,7 +25,7 @@ export default async function subscribe(
 
   try {
     const { email_address, status } = (await mailchimp.lists.addListMember(
-      process.env.MAILCHIMP_AUDIENCE_ID!,
+      MAILCHIMP_AUDIENCE_ID!,
       {
         email_address: email,
         status: "subscribed" as Status,
@@ -27,7 +34,8 @@ export default async function subscribe(
 
     return res.status(201).json({ email: email_address, status })
   } catch (error) {
-    const { text } = error.response
+    console.error(error)
+    const { text } = error?.response ?? {}
     const { status, ...rest } = JSON.parse(text)
 
     if (Number(status) >= 400 && Number(status) < 500) {

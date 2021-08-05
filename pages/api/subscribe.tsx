@@ -27,7 +27,7 @@ export default async function subscribe(
 
     return res.status(201).json({ email: email_address, status })
   } catch (error) {
-    const { text } = error.response
+    const { text } = error?.response ?? {}
     const { status, ...rest } = JSON.parse(text)
 
     if (Number(status) >= 400 && Number(status) < 500) {

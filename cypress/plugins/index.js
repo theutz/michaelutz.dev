@@ -12,6 +12,9 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+const path = require("path")
+require("dotenv").config({ path: path.resolve(process.cwd(), ".env.local") })
+
 /**
  * @type {Cypress.PluginConfig}
  */
@@ -19,4 +22,9 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  config.env.MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
+  config.env.MAILCHIMP_API_SERVER = process.env.MAILCHIMP_API_SERVER
+  config.env.MAILCHIMP_AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID
+
+  return config
 }

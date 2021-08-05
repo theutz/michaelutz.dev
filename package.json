@@ -13,14 +13,17 @@
   "dependencies": {
     "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.3",
-    "@tailwindcss/forms": "^0.3.3",
+    "@mailchimp/mailchimp_marketing": "^3.0.56",
+    "axios": "^0.21.1",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^0.5.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -28,6 +31,7 @@
     "@testing-library/react-hooks": "^7.0.1",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^26.0.24",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.2",
     "@types/node": "^16.4.9",
     "@types/react": "17.0.15",
     "autoprefixer": "^10.3.1",

@@ -378,9 +378,6 @@ exports[`<Default /> renders 1`] = `
                 </button>
               </div>
             </form>
-            <div
-              class="mt-2 text-sm"
-            />
           </div>
         </div>
         <div

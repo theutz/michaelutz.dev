@@ -48,19 +48,6 @@ export function Subscribe() {
           </button>
         </div>
       </form>
-      <div
-        className={classNames(
-          "mt-2 text-sm",
-          error && "text-red-500",
-          data && "text-green-500"
-        )}
-      >
-        {error
-          ? error.title
-          : data
-          ? "Success! You are now subscribed to the newsletter!"
-          : null}
-      </div>
     </>
   )
 }

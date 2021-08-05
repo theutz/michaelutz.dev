@@ -17,28 +17,6 @@ export function Subscribe() {
     [subscribe]
   )
 
-  // const subscribe = async (e: FormEvent) => {
-  //   e.preventDefault()
-
-  //   const res = await fetch("/api/subscribe", {
-  //     body: JSON.stringify({ email: inputEl.current?.value }),
-  //     headers: { "Content-Type": "application/json" },
-  //     method: "POST",
-  //   })
-
-  //   const { error } = await res.json()
-
-  //   if (error) {
-  //     setMessage(error.title)
-  //     return
-  //   }
-
-  //   if (inputEl.current) {
-  //     inputEl.current.value = ""
-  //     setMessage("Success! You are now subscribed to the newsletter.")
-  //   }
-  // }
-
   return (
     <>
       <h3 className="text-sm font-semibold tracking-wider text-gray-400 uppercase">

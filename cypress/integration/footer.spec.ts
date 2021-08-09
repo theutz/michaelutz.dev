@@ -28,10 +28,24 @@ describe(`Footer`, () => {
       })
 
       beforeEach(function () {
-        cy.intercept("/api/subscribe").as("subscribe")
+        let sendResponse: (value: unknown) => void | undefined
+
+        const trigger = new Promise((resolve) => {
+          sendResponse = resolve
+        })
+
+        cy.intercept("/api/subscribe", async (req) => {
+          await trigger
+          req.continue()
+        }).as("subscribe")
 
         cy.getBySel("email-signup-input").type(this.email)
         cy.getBySel("email-signup-button").should("not.be.disabled").click()
+        cy.getBySel("email-signup-icon-loading")
+          .should("be.visible")
+          .then(() => {
+            sendResponse(undefined)
+          })
       })
 
       after(function () {

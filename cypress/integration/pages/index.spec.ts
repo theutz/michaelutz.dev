@@ -82,7 +82,7 @@ describe(`Home Page`, () => {
     })
   })
 
-  describe.only(`email newsletter subscription`, () => {
+  describe(`email newsletter subscription`, () => {
     before(function () {
       cy.then(function () {
         this.mailchimpBaseUrl = `https://${Cypress.env(

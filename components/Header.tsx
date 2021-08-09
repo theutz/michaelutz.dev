@@ -3,6 +3,7 @@ import { Popover, Transition } from "@headlessui/react"
 import {
   AnnotationIcon,
   ChatAlt2Icon,
+  ChipIcon,
   InboxIcon,
   MenuIcon,
   QuestionMarkCircleIcon,
@@ -39,6 +40,7 @@ const solutions = [
     icon: QuestionMarkCircleIcon,
   },
 ]
+
 export function Header() {
   return (
     <header>
@@ -49,11 +51,7 @@ export function Header() {
               <div className="flex justify-start lg:w-0 lg:flex-1">
                 <a href="#">
                   <span className="sr-only">Workflow</span>
-                  <img
-                    className="w-auto h-8 sm:h-10"
-                    src="https://tailwindui.com/img/logos/workflow-mark-purple-600-to-indigo-600.svg"
-                    alt=""
-                  />
+                  <ChipIcon className="w-auto h-8 text-purple-700 stroke-current sm:h-10" />
                 </a>
               </div>
               <div className="-my-2 -mr-2 md:hidden">

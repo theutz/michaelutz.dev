@@ -31,27 +31,37 @@ describe(`the logo`, () => {
 })
 
 describe(`the links`, () => {
+  const hamburgerSelector = "[data-cy=hamburger-menu-button]"
+
+  const links = ["Pricing", "Partners", "Company"]
   beforeEach(() => {
     cy.get("[data-cy=hamburger-menu-button]").as("hamburger")
   })
 
-  context(`on mobile`, () => {
-    beforeEach(() => {
-      cy.viewport("iphone-8")
-    })
-
+  context(`on mobile`, { viewportHeight: 844, viewportWidth: 390 }, () => {
     it(`is visible`, () => {
       cy.get("@hamburger").should("be.visible")
     })
 
     context(`when clicking`, () => {
+      before(() => {
+        cy.get(hamburgerSelector).click()
+      })
+
       beforeEach(() => {
-        cy.get("@hamburger").click()
         cy.get("[data-cy=hamburger-popover]").as("menu")
       })
 
       it(`shows the popover menu`, () => {
         cy.get("@menu").should("be.visible")
+      })
+
+      describe(`other links`, () => {
+        links.forEach((link) => {
+          it(`has the ${link} link`, () => {
+            cy.get("@menu").find(`a:contains(${link})`).should("be.visible")
+          })
+        })
       })
     })
   })

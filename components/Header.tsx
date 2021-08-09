@@ -60,7 +60,11 @@ export function Header() {
               <div className="-my-2 -mr-2 md:hidden">
                 <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open menu</span>
-                  <MenuIcon className="w-6 h-6" aria-hidden="true" />
+                  <MenuIcon
+                    data-cy="hamburger-menu-button"
+                    className="w-6 h-6"
+                    aria-hidden="true"
+                  />
                 </Popover.Button>
               </div>
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
@@ -179,7 +183,10 @@ export function Header() {
                 static
                 className="absolute inset-x-0 top-0 z-30 p-2 transition transform origin-top-right md:hidden"
               >
-                <div className="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50">
+                <div
+                  className="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50"
+                  data-cy="hamburger-popover"
+                >
                   <div className="px-5 pt-5 pb-6">
                     <div className="flex items-center justify-between">
                       <div>

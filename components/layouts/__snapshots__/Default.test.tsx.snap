@@ -58,6 +58,7 @@ exports[`<Default /> renders 1`] = `
               <svg
                 aria-hidden="true"
                 class="w-6 h-6"
+                data-cy="hamburger-menu-button"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

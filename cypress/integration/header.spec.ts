@@ -29,3 +29,36 @@ describe(`the logo`, () => {
     })
   })
 })
+
+describe(`the links`, () => {
+  beforeEach(() => {
+    cy.get("[data-cy=hamburger-menu-button]").as("hamburger")
+  })
+
+  context(`on mobile`, () => {
+    beforeEach(() => {
+      cy.viewport("iphone-8")
+    })
+
+    it(`is visible`, () => {
+      cy.get("@hamburger").should("be.visible")
+    })
+
+    context(`when clicking`, () => {
+      beforeEach(() => {
+        cy.get("@hamburger").click()
+        cy.get("[data-cy=hamburger-popover]").as("menu")
+      })
+
+      it(`shows the popover menu`, () => {
+        cy.get("@menu").should("be.visible")
+      })
+    })
+  })
+
+  context(`on larger screens`, () => {
+    it(`is not visible`, () => {
+      cy.get("@hamburger").should("not.be.visible")
+    })
+  })
+})

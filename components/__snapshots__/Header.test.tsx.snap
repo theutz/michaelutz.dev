@@ -18,7 +18,7 @@ exports[`<Header /> renders 1`] = `
             <span
               class="sr-only"
             >
-              Workflow
+              Michael Utz
             </span>
             <svg
               class="w-auto h-8 text-purple-700 stroke-current sm:h-10"

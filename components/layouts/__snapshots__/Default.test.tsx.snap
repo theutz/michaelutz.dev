@@ -18,7 +18,7 @@ exports[`<Default /> renders 1`] = `
             class="flex justify-start lg:w-0 lg:flex-1"
           >
             <a
-              href="#"
+              href="/"
             >
               <span
                 class="sr-only"

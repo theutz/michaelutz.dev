@@ -9,6 +9,7 @@ import {
   QuestionMarkCircleIcon,
   XIcon,
 } from "@heroicons/react/outline"
+import Link from "next/link"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 import React, { Fragment } from "react"
 import { classNames } from "utils/classNames"
@@ -49,10 +50,12 @@ export function Header() {
           <>
             <div className="flex items-center justify-between px-4 py-6 mx-auto max-w-7xl sm:px-6 md:justify-start md:space-x-10 lg:px-8">
               <div className="flex justify-start lg:w-0 lg:flex-1">
-                <a href="#">
-                  <span className="sr-only">Michael Utz</span>
-                  <ChipIcon className="w-auto h-8 text-purple-700 stroke-current sm:h-10" />
-                </a>
+                <Link href="/">
+                  <a>
+                    <span className="sr-only">Michael Utz</span>
+                    <ChipIcon className="w-auto h-8 text-purple-700 stroke-current sm:h-10" />
+                  </a>
+                </Link>
               </div>
               <div className="-my-2 -mr-2 md:hidden">
                 <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

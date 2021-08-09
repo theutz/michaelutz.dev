@@ -5,7 +5,9 @@ exports[`<Default /> renders 1`] = `
   <div
     class="bg-white"
   >
-    <header>
+    <header
+      data-cy="header-nav"
+    >
       <div
         class="relative bg-white"
       >

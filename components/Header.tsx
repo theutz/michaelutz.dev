@@ -43,7 +43,7 @@ const solutions = [
 
 export function Header() {
   return (
-    <header>
+    <header data-cy="header-nav">
       <Popover className="relative bg-white">
         {({ open }) => (
           <>

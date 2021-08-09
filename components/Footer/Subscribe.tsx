@@ -11,7 +11,7 @@ import { classNames } from "utils/classNames"
 function StatusIcon({
   status,
   ...props
-}: HTMLProps<HTMLDivElement> & { status: Status }) {
+}: HTMLProps<HTMLDivElement> & { status: Status; "data-cy": string }) {
   let Icon
 
   switch (status) {
@@ -27,6 +27,7 @@ function StatusIcon({
       Icon = CheckCircleIcon
       break
     }
+    case "ready":
     default: {
       Icon = MailIcon
     }
@@ -38,6 +39,7 @@ function StatusIcon({
       {...props}
     >
       <Icon
+        data-cy={`${props["data-cy"]}-${status}`}
         className={classNames(
           "w-5 h-5 text-gray-400 stroke-current",
           status === "error" && "text-red-500",
@@ -75,7 +77,11 @@ export function Subscribe() {
       <p className="mt-4 text-base text-gray-500">
         The latest news, articles, and resources, sent to your inbox weekly.
       </p>
-      <form className="mt-4 sm:flex sm:max-w-md" onSubmit={handleSubmit}>
+      <form
+        data-cy="email-signup-form"
+        className="mt-4 sm:flex sm:max-w-md"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="email-address" className="sr-only">
           Email address
         </label>

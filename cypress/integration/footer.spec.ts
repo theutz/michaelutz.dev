@@ -6,9 +6,17 @@ function makeSubscriberHash(email: string) {
 }
 
 describe(`Footer`, () => {
-  describe(`subscribe`, () => {
-    before(function () {
-      cy.visit("/").then(function () {
+  before(function () {
+    cy.visit("/")
+  })
+
+  describe(`Email Subscription`, () => {
+    it(`has an icon`, () => {
+      cy.getBySel("email-signup-icon-ready").should("be.visible")
+    })
+
+    context("when subscribing", () => {
+      before(function () {
         this.email = faker.internet.email()
         this.subscriber_hash = makeSubscriberHash(this.email)
         this.mailchimpBaseUrl = `https://${Cypress.env(
@@ -18,54 +26,45 @@ describe(`Footer`, () => {
         this.pass = Cypress.env("MAILCHIMP_API_KEY")
         this.user = "any"
       })
-    })
 
-    beforeEach(function () {
-      cy.get("[data-cy=email-signup]").as("signup")
-      cy.get("@signup").find("[data-cy=input]").as("input")
-      cy.get("@signup").find("[data-cy=button]").as("button")
-      cy.get("@signup").find("[data-cy=icon]").as("icon")
+      beforeEach(function () {
+        cy.intercept("/api/subscribe").as("subscribe")
 
-      cy.intercept("/api/subscribe").as("subscribe")
-
-      cy.get("@input").type(this.email)
-      cy.get("@button").click()
-    })
-
-    afterEach(() => {
-      cy.get("@input").clear()
-    })
-
-    after(function () {
-      cy.request({
-        url: `${this.mailchimpBaseUrl}/lists/${this.list_id}/members/${this.subscriber_hash}`,
-        method: "DELETE",
-        auth: { user: this.user, pass: this.pass },
-        retryOnStatusCodeFailure: true,
+        cy.getBySel("email-signup-input").type(this.email)
+        cy.getBySel("email-signup-button").should("not.be.disabled").click()
       })
-    })
 
-    describe(`when using a new email`, () => {
-      it(`works`, function () {
-        cy.wait("@subscribe")
-          .its("response")
-          .then((response) => {
-            expect(response?.statusCode).to.eq(201)
-          })
+      after(function () {
+        cy.request({
+          url: `${this.mailchimpBaseUrl}/lists/${this.list_id}/members/${this.subscriber_hash}`,
+          method: "DELETE",
+          auth: { user: this.user, pass: this.pass },
+          retryOnStatusCodeFailure: true,
+        })
       })
-    })
 
-    describe(`when using an existing email`, () => {
-      it("fails", function () {
-        cy.wait("@subscribe")
-          .its("response")
-          .then((response) => {
-            expect(response?.statusCode).to.eq(400)
-            expect(response?.body.title).to.match(/Member Exists/)
-          })
-        cy.get("@signup")
-          .siblings(":contains(Member Exists)")
-          .should("be.visible")
+      describe(`when using a new email`, () => {
+        it(`sucessfully subscribes`, function () {
+          cy.wait("@subscribe")
+          cy.getBySel("email-signup-icon-ready").should("not.exist")
+          cy.getBySel("email-signup-icon-success").should("be.visible")
+        })
+      })
+
+      describe(`when using an existing email`, () => {
+        before(() => {
+          cy.reload()
+        })
+
+        it("displays an error message", function () {
+          cy.wait("@subscribe")
+          cy.getBySel("email-signup-icon-ready").should("not.exist")
+          cy.getBySel("email-signup-icon-error").should("be.visible")
+          cy.getBySel("email-signup-error-message").should(
+            "contain.text",
+            "Member Exists"
+          )
+        })
       })
     })
   })

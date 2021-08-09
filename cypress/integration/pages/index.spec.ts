@@ -1,6 +1,3 @@
-// @ts-expect-error the Definitely Types types definitely suck
-import crypto from "crypto"
-
 describe(`Home Page`, () => {
   before(() => {
     cy.visit("/")
@@ -78,79 +75,6 @@ describe(`Home Page`, () => {
 
       it(`starts column 2 on md`, () => {
         cy.get("@item").should("have.class", "md:col-start-2")
-      })
-    })
-  })
-
-  describe(`email newsletter subscription`, () => {
-    before(function () {
-      cy.then(function () {
-        this.mailchimpBaseUrl = `https://${Cypress.env(
-          "MAILCHIMP_API_SERVER"
-        )}.api.mailchimp.com/3.0`
-        this.list_id = Cypress.env("MAILCHIMP_AUDIENCE_ID")
-        this.pass = Cypress.env("MAILCHIMP_API_KEY")
-        this.user = "any"
-      })
-        .fixture("profile")
-        .then(function ({ email }) {
-          this.email = email
-          cy.request({
-            url: this.mailchimpBaseUrl + "/search-members",
-            qs: { query: this.email },
-            body: { list_id: this.list_id },
-            auth: { user: this.user, pass: this.pass },
-            retryOnStatusCodeFailure: true,
-          }).then(({ body }) => {
-            this.members = body.exact_matches.members
-            this.member = this.members[0]
-            this.subscriber_hash = crypto
-              .createHash("md5")
-              .update(this.member.email_address.toLowerCase())
-              .digest("hex")
-          })
-        })
-    })
-
-    beforeEach(function () {
-      cy.get("[data-cy=email-signup]").as("signup")
-      cy.get("@signup").find("[data-cy=input]").as("input")
-      cy.get("@signup").find("[data-cy=button]").as("button")
-      cy.get("@signup").find("[data-cy=icon]").as("icon")
-
-      cy.intercept("/api/subscribe").as("subscribe")
-    })
-
-    afterEach(() => {
-      cy.get("@input").clear()
-    })
-
-    after(function () {
-      cy.request({
-        url: `${this.mailchimpBaseUrl}/lists/${this.list_id}/members/${this.subscriber_hash}`,
-        method: "DELETE",
-        auth: { user: this.user, pass: this.pass },
-        retryOnStatusCodeFailure: true,
-      })
-    })
-
-    describe(`when using a new email`, () => {
-      it(`works`, function () {
-        cy.get("@input").type(this.email)
-        cy.get("@button").click()
-        cy.wait("@subscribe").its("response.statusCode").should("eq", 201)
-      })
-    })
-
-    describe(`when using an existing email`, () => {
-      specify("used member exists", function () {
-        expect(this.members).to.have.lengthOf(1)
-      })
-
-      it("fails", function () {
-        cy.get("@input").type(this.email)
-        cy.get("@button").click()
-        cy.wait("@subscribe").its("response.statusCode").should("eq", 400)
       })
     })
   })

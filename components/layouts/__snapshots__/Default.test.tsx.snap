@@ -351,7 +351,6 @@ exports[`<Default /> renders 1`] = `
             </p>
             <form
               class="mt-4 sm:flex sm:max-w-md"
-              data-cy="email-signup"
             >
               <label
                 class="sr-only"
@@ -364,7 +363,7 @@ exports[`<Default /> renders 1`] = `
               >
                 <div
                   class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-                  data-cy="icon"
+                  data-cy="email-signup-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -385,7 +384,7 @@ exports[`<Default /> renders 1`] = `
                 <input
                   autocomplete="email"
                   class="w-full min-w-0 py-2 pl-10 pr-4 text-base text-gray-900 placeholder-gray-500 bg-white border border-gray-300 appearance-none sm:py-3 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:placeholder-gray-400"
-                  data-cy="input"
+                  data-cy="email-signup-input"
                   id="email-address"
                   name="email-address"
                   placeholder="Enter your email"
@@ -399,7 +398,7 @@ exports[`<Default /> renders 1`] = `
               >
                 <button
                   class="flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
-                  data-cy="button"
+                  data-cy="email-signup-button"
                   type="submit"
                 >
                   Subscribe

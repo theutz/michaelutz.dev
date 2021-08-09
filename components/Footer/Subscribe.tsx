@@ -75,18 +75,14 @@ export function Subscribe() {
       <p className="mt-4 text-base text-gray-500">
         The latest news, articles, and resources, sent to your inbox weekly.
       </p>
-      <form
-        data-cy="email-signup"
-        className="mt-4 sm:flex sm:max-w-md"
-        onSubmit={handleSubmit}
-      >
+      <form className="mt-4 sm:flex sm:max-w-md" onSubmit={handleSubmit}>
         <label htmlFor="email-address" className="sr-only">
           Email address
         </label>
         <div className="relative w-full">
-          <StatusIcon data-cy="icon" status={status} />
+          <StatusIcon data-cy="email-signup-icon" status={status} />
           <input
-            data-cy="input"
+            data-cy="email-signup-input"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value)
@@ -103,7 +99,7 @@ export function Subscribe() {
         </div>
         <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
           <button
-            data-cy="button"
+            data-cy="email-signup-button"
             type="submit"
             className="flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
             disabled={status !== "ready"}
@@ -113,7 +109,12 @@ export function Subscribe() {
         </div>
       </form>
       {status === "error" && (
-        <div className="mt-2 ml-2 text-red-500">{error.title}</div>
+        <div
+          className="mt-2 ml-2 text-red-500"
+          data-cy="email-signup-error-message"
+        >
+          {error.title}
+        </div>
       )}
     </>
   )

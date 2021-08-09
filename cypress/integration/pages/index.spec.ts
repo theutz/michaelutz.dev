@@ -1,9 +1,11 @@
-describe(`Home Page`, () => {
-  describe(`<head>`, () => {
-    before(() => {
-      cy.visit("/")
-    })
+// @ts-expect-error the Definitely Types types definitely suck
 
+describe(`Home Page`, () => {
+  before(() => {
+    cy.visit("/")
+  })
+
+  describe(`<head>`, () => {
     beforeEach(() => {
       cy.get("head").as("head")
     })
@@ -42,39 +44,83 @@ describe(`Home Page`, () => {
         cy.request(url).its("status").should("eq", 200)
       })
     })
+  })
 
-    describe(`the logo cloud`, () => {
+  describe(`the logo cloud`, () => {
+    beforeEach(() => {
+      cy.get("[data-cy=logo-cloud]").as("parent")
+      cy.get("@parent").find("[data-cy=logo-cloud-container]").as("grid")
+    })
+
+    it("has 5 children", () => {
+      cy.get("@grid").children().should("have.lengthOf", 5)
+    })
+
+    describe(`last child`, () => {
       beforeEach(() => {
-        cy.get("[data-cy=logo-cloud]").as("parent")
-        cy.get("@parent").find("[data-cy=logo-cloud-container]").as("grid")
+        cy.get("@grid").find(":last-child").as("last")
       })
 
-      it("has 5 children", () => {
-        cy.get("@grid").children().should("have.lengthOf", 5)
+      it(`spans 2 columns`, () => {
+        cy.get("@last").should("have.class", "col-span-2")
       })
 
-      describe(`last child`, () => {
-        beforeEach(() => {
-          cy.get("@grid").find(":last-child").as("last")
-        })
+      it(`starts column 4 on medium`, () => {
+        cy.get("@last").should("have.class", "md:col-start-4")
+      })
+    })
 
-        it(`spans 2 columns`, () => {
-          cy.get("@last").should("have.class", "col-span-2")
-        })
+    describe(`2nd to last`, () => {
+      beforeEach(() => {
+        cy.get("@grid").find(":nth-last-child(2)").as("item")
+      })
 
-        it(`starts column 4 on medium`, () => {
-          cy.get("@last").should("have.class", "md:col-start-4")
+      it(`starts column 2 on md`, () => {
+        cy.get("@item").should("have.class", "md:col-start-2")
+      })
+    })
+  })
+
+  describe(`email newsletter subscription`, () => {
+    before(() => {
+      const url = `https://${Cypress.env(
+        "MAILCHIMP_API_SERVER"
+      )}.api.mailchimp.com/3.0/search-members`
+      cy.request({
+        url,
+        qs: { query: "michael@theutz.com" },
+        body: { list_id: Cypress.env("MAILCHIMP_AUDIENCE_ID") },
+        auth: { user: "any", pass: Cypress.env("MAILCHIMP_API_KEY") },
+        retryOnStatusCodeFailure: true,
+      })
+        .its("body.exact_matches.members")
+        .as("members")
+    })
+
+    beforeEach(() => {
+      cy.get("[data-cy=email-signup]").as("signup")
+      cy.get("@signup").find("[data-cy=input]").as("input")
+      cy.get("@signup").find("[data-cy=button]").as("button")
+      cy.get("@signup").find("[data-cy=icon]").as("icon")
+
+      cy.intercept("/api/subscribe").as("subscribe")
+    })
+
+    describe(`when using an existing email`, () => {
+      beforeEach(() => {
+        cy.fixture("profile").then(function (profile) {
+          this.email = profile.email
         })
       })
 
-      describe(`2nd to last`, () => {
-        beforeEach(() => {
-          cy.get("@grid").find(":nth-last-child(2)").as("item")
-        })
+      it("can check to see the member exists", () => {
+        cy.get("@members").should("have.length.gt", 0)
+      })
 
-        it(`starts column 2 on md`, () => {
-          cy.get("@item").should("have.class", "md:col-start-2")
-        })
+      it("fails", function () {
+        cy.get("@input").type(this.email)
+        cy.get("@button").click()
+        cy.wait("@subscribe").its("response.statusCode").should("eq", 400)
       })
     })
   })

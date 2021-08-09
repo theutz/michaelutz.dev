@@ -17,6 +17,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+          CYPRESS_MAILCHIMP_API_SERVER: ${{ secrets.MAILCHIMP_API_SERVER }}
+          CYPRESS_MAILCHIMP_AUDIENCE_ID: ${{ secrets.MAILCHIMP_AUDIENCE_ID }}
+          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+          MAILCHIMP_API_SERVER: ${{ secrets.MAILCHIMP_API_SERVER }}
+          MAILCHIMP_AUDIENCE_ID: ${{ secrets.MAILCHIMP_AUDIENCE_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          record: true
           build: npm run build
           start: npm start

@@ -1,9 +1,9 @@
 describe(`Home Page`, () => {
-  describe(`<head>`, () => {
-    before(() => {
-      cy.visit("/")
-    })
+  before(() => {
+    cy.visit("/")
+  })
 
+  describe(`<head>`, () => {
     beforeEach(() => {
       cy.get("head").as("head")
     })
@@ -42,39 +42,39 @@ describe(`Home Page`, () => {
         cy.request(url).its("status").should("eq", 200)
       })
     })
+  })
 
-    describe(`the logo cloud`, () => {
+  describe(`the logo cloud`, () => {
+    beforeEach(() => {
+      cy.get("[data-cy=logo-cloud]").as("parent")
+      cy.get("@parent").find("[data-cy=logo-cloud-container]").as("grid")
+    })
+
+    it("has 5 children", () => {
+      cy.get("@grid").children().should("have.lengthOf", 5)
+    })
+
+    describe(`last child`, () => {
       beforeEach(() => {
-        cy.get("[data-cy=logo-cloud]").as("parent")
-        cy.get("@parent").find("[data-cy=logo-cloud-container]").as("grid")
+        cy.get("@grid").find(":last-child").as("last")
       })
 
-      it("has 5 children", () => {
-        cy.get("@grid").children().should("have.lengthOf", 5)
+      it(`spans 2 columns`, () => {
+        cy.get("@last").should("have.class", "col-span-2")
       })
 
-      describe(`last child`, () => {
-        beforeEach(() => {
-          cy.get("@grid").find(":last-child").as("last")
-        })
+      it(`starts column 4 on medium`, () => {
+        cy.get("@last").should("have.class", "md:col-start-4")
+      })
+    })
 
-        it(`spans 2 columns`, () => {
-          cy.get("@last").should("have.class", "col-span-2")
-        })
-
-        it(`starts column 4 on medium`, () => {
-          cy.get("@last").should("have.class", "md:col-start-4")
-        })
+    describe(`2nd to last`, () => {
+      beforeEach(() => {
+        cy.get("@grid").find(":nth-last-child(2)").as("item")
       })
 
-      describe(`2nd to last`, () => {
-        beforeEach(() => {
-          cy.get("@grid").find(":nth-last-child(2)").as("item")
-        })
-
-        it(`starts column 2 on md`, () => {
-          cy.get("@item").should("have.class", "md:col-start-2")
-        })
+      it(`starts column 2 on md`, () => {
+        cy.get("@item").should("have.class", "md:col-start-2")
       })
     })
   })

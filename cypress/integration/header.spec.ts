@@ -7,21 +7,24 @@ beforeEach(() => {
 })
 
 describe(`the logo`, () => {
+  beforeEach(() => {
+    cy.get("@header").find("a[href='/']").as("link")
+  })
+
+  it(`exists`, () => {
+    cy.get("@link").should("exist")
+  })
+
   it(`has sr text`, () => {
     cy.get("@header").find(".sr-only:contains(Michael Utz)").should("exist")
   })
 
-  describe("the link", () => {
+  context(`when clicking`, () => {
     beforeEach(() => {
-      cy.get("@header").find("a[href='/']").as("link")
-    })
-
-    it(`exists`, () => {
-      cy.get("@link").should("exist")
+      cy.get("@link").click()
     })
 
     it(`takes you to the home page`, () => {
-      cy.get("@link").click()
       cy.url().should("eq", Cypress.config().baseUrl + "/")
     })
   })

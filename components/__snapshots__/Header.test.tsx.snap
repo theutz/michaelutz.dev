@@ -103,9 +103,9 @@ exports[`<Header /> renders 1`] = `
           </div>
           <a
             class="text-base font-medium text-gray-500 hover:text-gray-900"
-            href="#"
+            href="/about"
           >
-            Pricing
+            About
           </a>
           <a
             class="text-base font-medium text-gray-500 hover:text-gray-900"

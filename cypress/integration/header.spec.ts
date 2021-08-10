@@ -34,7 +34,7 @@ describe(`Header`, () => {
   })
 
   describe(`the links`, () => {
-    const links = ["Pricing", "Partners", "Company"]
+    const links = ["About"]
 
     context(`on mobile`, { viewportHeight: 844, viewportWidth: 390 }, () => {
       it(`is visible`, () => {
@@ -55,11 +55,17 @@ describe(`Header`, () => {
         })
 
         describe(`other links`, () => {
+          afterEach(() => {
+            cy.go("back")
+          })
+
           links.forEach((link) => {
             it(`has the ${link} link`, () => {
               cy.getBySel(selectors.hamburgerPopover)
                 .find(`a:contains(${link})`)
                 .should("be.visible")
+                .click()
+              cy.url().should("match", /\/about$/)
             })
           })
         })

@@ -15,6 +15,7 @@ exports[`<Header /> renders 1`] = `
           class="flex justify-start lg:w-0 lg:flex-1"
         >
           <a
+            data-cy="header-logo-link"
             href="/"
           >
             <span

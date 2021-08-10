@@ -42,6 +42,8 @@ const solutions = [
   },
 ]
 
+const otherLinks = [{ name: "About", href: "/about" }]
+
 export function Header() {
   return (
     <header data-cy="header-nav">
@@ -133,23 +135,13 @@ export function Header() {
                   )}
                 </Popover>
 
-                <Link href="/about">
-                  <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                    About
-                  </a>
-                </Link>
-                <a
-                  href="#"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Partners
-                </a>
-                <a
-                  href="#"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Company
-                </a>
+                {otherLinks.map((link) => (
+                  <Link key={link} href={link.href}>
+                    <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                      {link.name}
+                    </a>
+                  </Link>
+                ))}
               </Popover.Group>
               <div className="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
                 <a
@@ -229,23 +221,13 @@ export function Header() {
                   </div>
                   <div className="px-5 py-6">
                     <div className="grid grid-cols-2 gap-4">
-                      <Link href="/about">
-                        <a className="text-base font-medium text-gray-900 hover:text-gray-700">
-                          About
-                        </a>
-                      </Link>
-                      <a
-                        href="#"
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
-                      >
-                        Partners
-                      </a>
-                      <a
-                        href="#"
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
-                      >
-                        Company
-                      </a>
+                      {otherLinks.map((link) => (
+                        <Link key={link} href={link.href}>
+                          <a className="text-base font-medium text-gray-900 hover:text-gray-700">
+                            {link.name}
+                          </a>
+                        </Link>
+                      ))}
                     </div>
                     <div className="mt-6">
                       <a

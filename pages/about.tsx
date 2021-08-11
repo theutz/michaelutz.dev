@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export default function About() {
   return (
     <div data-cy="page-about" className="relative bg-white">

@@ -84,7 +84,7 @@ exports[`<Header /> renders 1`] = `
               type="button"
             >
               <span>
-                Solutions
+                Blog
               </span>
               <svg
                 aria-hidden="true"
@@ -101,6 +101,12 @@ exports[`<Header /> renders 1`] = `
               </svg>
             </button>
           </div>
+          <a
+            class="text-base font-medium text-gray-500 hover:text-gray-900"
+            href="/portfolio"
+          >
+            Portfolio
+          </a>
           <a
             class="text-base font-medium text-gray-500 hover:text-gray-900"
             href="/about"

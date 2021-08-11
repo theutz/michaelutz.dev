@@ -2,64 +2,73 @@
 import { Popover, Transition } from "@headlessui/react"
 import {
   AnnotationIcon,
-  ChatAlt2Icon,
-  InboxIcon,
+  ChipIcon,
   MenuIcon,
-  QuestionMarkCircleIcon,
+  ColorSwatchIcon,
   XIcon,
+  SparklesIcon,
+  DesktopComputerIcon,
 } from "@heroicons/react/outline"
+import Link from "next/link"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 import React, { Fragment } from "react"
 import { classNames } from "utils/classNames"
 
-const solutions = [
+const blog = [
   {
-    name: "Inbox",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
+    name: "Technology",
+    description: "My thoughts and experiences about building websites.",
     href: "#",
-    icon: InboxIcon,
+    icon: DesktopComputerIcon,
   },
   {
-    name: "Messaging",
-    description: "Speak directly to your customers in a more meaningful way.",
+    name: "Design",
+    description: "Interesting articles about UI & UX design for the web.",
+    href: "#",
+    icon: ColorSwatchIcon,
+  },
+  {
+    name: "Communication",
+    description: "Thoughts about communicating with customers and co-workers.",
     href: "#",
     icon: AnnotationIcon,
   },
   {
-    name: "Live Chat",
-    description: "Your customers' data will be safe and secure.",
-    href: "#",
-    icon: ChatAlt2Icon,
-  },
-  {
-    name: "Knowledge Base",
-    description: "Connect with third-party tools that you're already using.",
-    href: "#",
-    icon: QuestionMarkCircleIcon,
+    name: "All",
+    description: "All of the above, and everything else!",
+    href: "/blog",
+    icon: SparklesIcon,
   },
 ]
+
+const otherLinks = [
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "About", href: "/about" },
+]
+
 export function Header() {
   return (
-    <header>
+    <header data-cy="header-nav">
       <Popover className="relative bg-white">
         {({ open }) => (
           <>
             <div className="flex items-center justify-between px-4 py-6 mx-auto max-w-7xl sm:px-6 md:justify-start md:space-x-10 lg:px-8">
               <div className="flex justify-start lg:w-0 lg:flex-1">
-                <a href="#">
-                  <span className="sr-only">Workflow</span>
-                  <img
-                    className="w-auto h-8 sm:h-10"
-                    src="https://tailwindui.com/img/logos/workflow-mark-purple-600-to-indigo-600.svg"
-                    alt=""
-                  />
-                </a>
+                <Link href="/">
+                  <a data-cy="header-logo-link">
+                    <span className="sr-only">Michael Utz</span>
+                    <ChipIcon className="w-auto h-8 text-purple-700 stroke-current sm:h-10" />
+                  </a>
+                </Link>
               </div>
               <div className="-my-2 -mr-2 md:hidden">
                 <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open menu</span>
-                  <MenuIcon className="w-6 h-6" aria-hidden="true" />
+                  <MenuIcon
+                    data-cy="hamburger-menu-button"
+                    className="w-6 h-6"
+                    aria-hidden="true"
+                  />
                 </Popover.Button>
               </div>
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
@@ -72,7 +81,7 @@ export function Header() {
                           "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         )}
                       >
-                        <span>Solutions</span>
+                        <span>Blog</span>
                         <ChevronDownIcon
                           className={classNames(
                             open ? "text-gray-600" : "text-gray-400",
@@ -98,7 +107,7 @@ export function Header() {
                         >
                           <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                             <div className="relative px-5 py-6 bg-white grid gap-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
-                              {solutions.map((item) => (
+                              {blog.map((item) => (
                                 <a
                                   key={item.name}
                                   href={item.href}
@@ -128,24 +137,13 @@ export function Header() {
                   )}
                 </Popover>
 
-                <a
-                  href="#"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Pricing
-                </a>
-                <a
-                  href="#"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Partners
-                </a>
-                <a
-                  href="#"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Company
-                </a>
+                {otherLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                      {link.name}
+                    </a>
+                  </Link>
+                ))}
               </Popover.Group>
               <div className="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
                 <a
@@ -178,7 +176,10 @@ export function Header() {
                 static
                 className="absolute inset-x-0 top-0 z-30 p-2 transition transform origin-top-right md:hidden"
               >
-                <div className="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50">
+                <div
+                  className="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50"
+                  data-cy="hamburger-popover"
+                >
                   <div className="px-5 pt-5 pb-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -189,7 +190,10 @@ export function Header() {
                         />
                       </div>
                       <div className="-mr-2">
-                        <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <Popover.Button
+                          data-cy="hamburger-close"
+                          className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        >
                           <span className="sr-only">Close menu</span>
                           <XIcon className="w-6 h-6" aria-hidden="true" />
                         </Popover.Button>
@@ -197,7 +201,7 @@ export function Header() {
                     </div>
                     <div className="mt-6">
                       <nav className="grid grid-cols-1 gap-7">
-                        {solutions.map((item) => (
+                        {blog.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}
@@ -219,38 +223,21 @@ export function Header() {
                   </div>
                   <div className="px-5 py-6">
                     <div className="grid grid-cols-2 gap-4">
-                      <a
-                        href="#"
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
-                      >
-                        Pricing
-                      </a>
-                      <a
-                        href="#"
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
-                      >
-                        Partners
-                      </a>
-                      <a
-                        href="#"
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
-                      >
-                        Company
-                      </a>
+                      {otherLinks.map((link) => (
+                        <Link key={link.href} href={link.href}>
+                          <a className="text-base font-medium text-gray-900 hover:text-gray-700">
+                            {link.name}
+                          </a>
+                        </Link>
+                      ))}
                     </div>
                     <div className="mt-6">
                       <a
-                        href="#"
+                        href="/contact"
                         className="flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border rounded-md shadow-sm hover:from-purple-700 hover:to-indigo-700"
                       >
-                        Sign up
+                        Contact me
                       </a>
-                      <p className="mt-6 text-base font-medium text-center text-gray-500">
-                        Existing customer?
-                        <a href="#" className="text-gray-900">
-                          Sign in
-                        </a>
-                      </p>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,9 @@
+describe('{{pascalCase name}} Page', () => {
+  before(() => {
+    cy.visit('/{{kebabCase name}}')
+  })
+
+  it('loads', () => {
+    cy.getBySel('page-{{kebabCase name}}')
+  })
+})

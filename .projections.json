@@ -5,14 +5,7 @@
       "__tests__/pages/{}.test.tsx",
       "cypress/integration/pages/*.spec.ts"
     ],
-    "type": "page",
-    "template": [
-      "export function {basename}() {",
-      "\treturn null;",
-      "}",
-      "",
-      "export default {basename};"
-    ]
+    "type": "page"
   },
   "__tests__/pages/*.test.tsx": {
     "alternate": "pages/{}.tsx",
@@ -20,23 +13,7 @@
       "pages/{}.tsx",
       "{dirname}/__snapshots__/{basename}.test.tsx.snap"
     ],
-    "type": "test",
-    "template": [
-      "import {open} render, screen {close} from '@testing-library/react'",
-      "import {basename|capitalize} from 'pages/{}'",
-      "",
-      "describe('<{basename|capitalize} />', () => {",
-      "\tit('renders', () => {",
-      "\t\t// Arrange",
-      "",
-      "\t\t// Act",
-      "\t\tconst {open} asFragment {close} = render(<{basename|capitalize} />)",
-      "",
-      "\t\t// Assert",
-      "\t\texpect(asFragment()).toMatchSnapshot()",
-      "\t});",
-      "});"
-    ]
+    "type": "test"
   },
   "__tests__/pages/**/__snapshots__/*.snap": {
     "alternate": "__tests__/pages/{}",
@@ -50,14 +27,7 @@
   },
   "components/*.tsx": {
     "alternate": "components/{}.test.tsx",
-    "type": "component",
-    "template": [
-      "export function {basename}() {",
-      "\treturn null;",
-      "}",
-      "",
-      "export default {basename};"
-    ]
+    "type": "component"
   },
   "components/*.test.tsx": {
     "alternate": "components/{}.tsx",
@@ -65,28 +35,17 @@
       "{dirname}/__snapshots__/{basename}.test.tsx.snap",
       "components/{}.tsx"
     ],
-    "type": "test",
-    "template": [
-      "import {open} render, screen {close} from '@testing-library/react'",
-      "import {open} {basename} {close} from 'components/{}'",
-      "",
-      "describe('<{basename} />', () => {",
-      "\tit('renders', () => {",
-      "\t\t// Arrange",
-      "",
-      "\t\t// Act",
-      "\t\tconst {open} asFragment {close} = render(<{basename} />)",
-      "",
-      "\t\t// Assert",
-      "\t\texpect(asFragment()).toMatchSnapshot()",
-      "\t});",
-      "});"
-    ]
+    "type": "test"
   },
   "components/**/__snapshots__/*.snap": {
     "alternate": "components/{}.test.tsx",
     "related": ["components/{}", "components/{}"],
     "type": "snap"
+  },
+  "cypress/integration/components/*.spec.ts": {
+    "alternate": "components/{}.tsx",
+    "related": "pages/{}.tsx",
+    "type": "int"
   },
   "hooks/*.tsx": {
     "alternate": "hooks/{}.test.tsx",

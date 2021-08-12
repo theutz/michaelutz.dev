@@ -19,14 +19,12 @@ module.exports = function (plop) {
       {
         type: "add",
         path: "__tests__/pages/{{kebabCase name}}.test.tsx",
-        templateFile: `${templateBase}/page/integration.hbs`,
+        templateFile: `${templateBase}/page/test.hbs`,
       },
       {
         type: "add",
         path: "cypress/integration/pages/{{kebabCase name}}.spec.ts",
-||||||| parent of 05f627f (chore(plop): setup templates for components)
-        path: "cypress/integration/pages/{{kebabCase name}}.ts",
-        templateFile: `${templateBase}/page/e2e.hbs`,
+        templateFile: `${templateBase}/page/integration.hbs`,
       },
     ],
   })
@@ -63,7 +61,7 @@ module.exports = function (plop) {
         actions.push({
           type: "add",
           path: "cypress/integration/components/{{pascalCase name}}.spec.ts",
-          templateFile: `${templateBase}/component/e2e.hbs`,
+          templateFile: `${templateBase}/component/integration.hbs`,
         })
       }
 

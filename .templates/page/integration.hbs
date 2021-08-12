@@ -1,14 +1,9 @@
-import { render, screen } from '@testing-library/react'
-import {{pascalCase name}} from 'pages/{{lowerCase name}}'
+describe('{{pascalCase name}} Page', () => {
+  before(() => {
+    cy.visit('/{{kebabCase name}}')
+  })
 
-describe('<{{pascalCase name}} />', () => {
-  it('renders', () => {
-    // Arrange
-
-    // Act
-    const { asFragment } = render(<{{pascalCase name}} />)
-
-    // Assert
-    expect(asFragment()).toMatchSnapshot()
+  it('loads', () => {
+    cy.getBySel('page-{{kebabCase name}}')
   })
 })

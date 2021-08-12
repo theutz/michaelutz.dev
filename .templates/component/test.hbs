@@ -1,0 +1,14 @@
+import { render, screen } from '@testing-library/react'
+import { {{pascalCase name}} } from 'components/{{pascalCase name}}'
+
+describe('<{{pascalCase name}} />', () => {
+  it('renders', () => {
+    // Arrange
+
+    // Act
+    const { asFragment } = render(<{{pascalCase name}} />)
+
+    // Assert
+    expect(asFragment()).toMatchSnapshot()
+  })
+})

@@ -1,9 +1,9 @@
-describe('<UnderConstruction />', () => {
+describe("<UnderConstruction />", () => {
   before(() => {
-    cy.visit('/')
+    cy.visit("/portfolio")
   })
 
-  it('loads', () => {
-    expect(true).to.eq(false)
+  it("loads", () => {
+    cy.get("[data-testid=under-construction]").should("be.visible")
   })
 })

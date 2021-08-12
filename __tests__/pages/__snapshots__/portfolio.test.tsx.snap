@@ -5,6 +5,7 @@ exports[`<Portfolio /> renders 1`] = `
   <div
     class="relative py-16 bg-white"
     data-cy="page-portfolio"
+    data-testid="under-construction"
   >
     <div
       aria-hidden="true"

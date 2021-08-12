@@ -29,11 +29,18 @@ exports[`<Portfolio /> renders 1`] = `
             <div
               class="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1"
             >
-              <img
-                alt=""
-                class="object-cover object-center shadow-2xl rounded-3xl"
-                src="https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80"
-              />
+              <div
+                style="display: block; overflow: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; margin: 0px;"
+              >
+                <noscript />
+                <img
+                  alt=""
+                  class="shadow-2xl rounded-3xl"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -118,18 +125,18 @@ exports[`<Portfolio /> renders 1`] = `
               class="text-3xl font-extrabold text-white"
               id="join-heading"
             >
-              Join our team
+              Under Construction
             </h2>
             <p
               class="text-lg text-white"
             >
-              Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.
+              Right now, this website is my best project for you to checkout what I've been up to.
             </p>
             <a
               class="block w-full px-5 py-3 text-base font-medium text-center text-indigo-700 bg-white border border-transparent shadow-md rounded-md hover:bg-gray-50 sm:inline-block sm:w-auto"
-              href="#"
+              href="/"
             >
-              Explore open positions
+              Return to Home
             </a>
           </div>
         </div>

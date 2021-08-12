@@ -1,3 +1,7 @@
+import Image from "next/image"
+import Link from "next/link"
+import constructionImage from "public/assets/images/construction.jpg"
+
 export function Portfolio() {
   return (
     <div data-cy="page-portfolio" className="relative py-16 bg-white">
@@ -14,9 +18,12 @@ export function Portfolio() {
             />
             <div className="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0">
               <div className="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
-                <img
-                  className="object-cover object-center shadow-2xl rounded-3xl"
-                  src="https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80"
+                <Image
+                  className="shadow-2xl rounded-3xl"
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  src={constructionImage}
                   alt=""
                 />
               </div>
@@ -100,19 +107,17 @@ export function Portfolio() {
                 className="text-3xl font-extrabold text-white"
                 id="join-heading"
               >
-                Join our team
+                Under Construction
               </h2>
               <p className="text-lg text-white">
-                Varius facilisi mauris sed sit. Non sed et duis dui leo,
-                vulputate id malesuada non. Cras aliquet purus dui laoreet diam
-                sed lacus, fames.
+                Right now, this website is my best project for you to checkout
+                what I&apos;ve been up to.
               </p>
-              <a
-                className="block w-full px-5 py-3 text-base font-medium text-center text-indigo-700 bg-white border border-transparent shadow-md rounded-md hover:bg-gray-50 sm:inline-block sm:w-auto"
-                href="#"
-              >
-                Explore open positions
-              </a>
+              <Link href="/">
+                <a className="block w-full px-5 py-3 text-base font-medium text-center text-indigo-700 bg-white border border-transparent shadow-md rounded-md hover:bg-gray-50 sm:inline-block sm:w-auto">
+                  Return to Home
+                </a>
+              </Link>
             </div>
           </div>
         </div>

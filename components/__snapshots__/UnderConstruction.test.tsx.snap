@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UnderConstruction /> renders 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="under-construction"
+  >
+    Under Construction
+  </div>
+</DocumentFragment>
+`;

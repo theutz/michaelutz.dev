@@ -139,7 +139,10 @@ export function Header() {
 
                 {otherLinks.map((link) => (
                   <Link key={link.href} href={link.href}>
-                    <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                    <a
+                      data-cy={`header-link-${link.name.toLowerCase()}`}
+                      className="text-base font-medium text-gray-500 hover:text-gray-900"
+                    >
                       {link.name}
                     </a>
                   </Link>

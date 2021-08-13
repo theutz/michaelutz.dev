@@ -34,7 +34,7 @@ describe(`Header`, () => {
   })
 
   describe(`the links`, () => {
-    const links = ["About"]
+    const links = ["Portfolio", "About"]
 
     context(`on mobile`, { viewportHeight: 844, viewportWidth: 390 }, () => {
       it(`is visible`, () => {
@@ -65,7 +65,7 @@ describe(`Header`, () => {
                 .find(`a:contains(${link})`)
                 .should("be.visible")
                 .click()
-              cy.url().should("match", /\/about$/)
+              cy.url().should("match", new RegExp(`/${link.toLowerCase()}$`))
             })
           })
         })
@@ -75,6 +75,21 @@ describe(`Header`, () => {
     context(`on larger screens`, () => {
       it(`is not visible`, () => {
         cy.getBySel(selectors.hamburger).should("not.be.visible")
+      })
+
+      describe(`other links`, () => {
+        afterEach(() => {
+          cy.go("back")
+        })
+
+        links.forEach((link) => {
+          it(`has the ${link} link`, () => {
+            cy.getBySel(`header-link-${link.toLowerCase()}`)
+              .should("be.visible")
+              .click()
+            cy.url().should("match", new RegExp(`/${link.toLowerCase()}$`))
+          })
+        })
       })
     })
   })

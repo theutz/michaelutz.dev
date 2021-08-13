@@ -186,11 +186,7 @@ export function Header() {
                   <div className="px-5 pt-5 pb-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <img
-                          className="w-auto h-8"
-                          src="https://tailwindui.com/img/logos/workflow-mark-purple-600-to-indigo-600.svg"
-                          alt="Workflow"
-                        />
+                        <ChipIcon className="w-auto h-8 text-purple-700 stroke-current" />
                       </div>
                       <div className="-mr-2">
                         <Popover.Button

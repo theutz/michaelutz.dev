@@ -50,7 +50,7 @@ export function Header() {
   return (
     <header data-cy="header-nav">
       <Popover className="relative bg-white">
-        {({ open }) => (
+        {({ open, close }) => (
           <>
             <div className="flex items-center justify-between px-4 py-6 mx-auto max-w-7xl sm:px-6 md:justify-start md:space-x-10 lg:px-8">
               <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -139,7 +139,10 @@ export function Header() {
 
                 {otherLinks.map((link) => (
                   <Link key={link.href} href={link.href}>
-                    <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                    <a
+                      data-cy={`header-link-${link.name.toLowerCase()}`}
+                      className="text-base font-medium text-gray-500 hover:text-gray-900"
+                    >
                       {link.name}
                     </a>
                   </Link>
@@ -225,7 +228,10 @@ export function Header() {
                     <div className="grid grid-cols-2 gap-4">
                       {otherLinks.map((link) => (
                         <Link key={link.href} href={link.href}>
-                          <a className="text-base font-medium text-gray-900 hover:text-gray-700">
+                          <a
+                            onClick={() => close()}
+                            className="text-base font-medium text-gray-900 hover:text-gray-700"
+                          >
                             {link.name}
                           </a>
                         </Link>

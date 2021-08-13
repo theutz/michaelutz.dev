@@ -34,7 +34,7 @@ describe(`Header`, () => {
   })
 
   describe(`the links`, () => {
-    const links = ["About"]
+    const links = ["Portfolio", "About"]
 
     context(`on mobile`, { viewportHeight: 844, viewportWidth: 390 }, () => {
       it(`is visible`, () => {
@@ -42,30 +42,24 @@ describe(`Header`, () => {
       })
 
       context(`when clicking`, () => {
-        before(() => {
-          cy.getBySel(selectors.hamburger).click()
-        })
+        links.forEach((link) => {
+          describe(`the ${link} link`, () => {
+            before(() => {
+              cy.getBySel(selectors.hamburger).should("be.visible").click()
+            })
 
-        beforeEach(() => {
-          cy.getBySel(selectors.hamburgerPopover)
-        })
+            after(() => {
+              cy.go("back")
+            })
 
-        it(`shows the popover menu`, () => {
-          cy.getBySel(selectors.hamburgerPopover).should("be.visible")
-        })
-
-        describe(`other links`, () => {
-          afterEach(() => {
-            cy.go("back")
-          })
-
-          links.forEach((link) => {
-            it(`has the ${link} link`, () => {
+            it(`works`, () => {
               cy.getBySel(selectors.hamburgerPopover)
                 .find(`a:contains(${link})`)
-                .should("be.visible")
-                .click()
-              cy.url().should("match", /\/about$/)
+                .as("link")
+              cy.get("@link").should("be.visible")
+              cy.get("@link").click()
+              cy.url().should("match", new RegExp(`/${link.toLowerCase()}$`))
+              cy.getBySel(selectors.hamburgerPopover).should("not.exist")
             })
           })
         })
@@ -75,6 +69,21 @@ describe(`Header`, () => {
     context(`on larger screens`, () => {
       it(`is not visible`, () => {
         cy.getBySel(selectors.hamburger).should("not.be.visible")
+      })
+
+      describe(`other links`, () => {
+        afterEach(() => {
+          cy.go("back")
+        })
+
+        links.forEach((link) => {
+          it(`has the ${link} link`, () => {
+            cy.getBySel(`header-link-${link.toLowerCase()}`)
+              .should("be.visible")
+              .click()
+            cy.url().should("match", new RegExp(`/${link.toLowerCase()}$`))
+          })
+        })
       })
     })
   })

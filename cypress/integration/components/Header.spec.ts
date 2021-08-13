@@ -42,30 +42,24 @@ describe(`Header`, () => {
       })
 
       context(`when clicking`, () => {
-        before(() => {
-          cy.getBySel(selectors.hamburger).click()
-        })
+        links.forEach((link) => {
+          describe(`the ${link} link`, () => {
+            before(() => {
+              cy.getBySel(selectors.hamburger).should("be.visible").click()
+            })
 
-        beforeEach(() => {
-          cy.getBySel(selectors.hamburgerPopover)
-        })
+            after(() => {
+              cy.go("back")
+            })
 
-        it(`shows the popover menu`, () => {
-          cy.getBySel(selectors.hamburgerPopover).should("be.visible")
-        })
-
-        describe(`other links`, () => {
-          afterEach(() => {
-            cy.go("back")
-          })
-
-          links.forEach((link) => {
-            it(`has the ${link} link`, () => {
+            it(`works`, () => {
               cy.getBySel(selectors.hamburgerPopover)
                 .find(`a:contains(${link})`)
-                .should("be.visible")
-                .click()
+                .as("link")
+              cy.get("@link").should("be.visible")
+              cy.get("@link").click()
               cy.url().should("match", new RegExp(`/${link.toLowerCase()}$`))
+              cy.getBySel(selectors.hamburgerPopover).should("not.exist")
             })
           })
         })
